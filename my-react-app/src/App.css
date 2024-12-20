@@ -1,0 +1,65 @@
+/* Muuda terve lehe taust värviks */
+body {
+  background-color: beige;
+}
+
+/* Roheline nupp */
+.green-button {
+  background-color: green;
+  color: lightgray;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Muuda kõrgust hover-olekus */
+.green-button:hover {
+  height: 100px;
+}
+
+/* Haaramise kursor active olekus */
+.green-button:active {
+  cursor: grab;
+}
+
+.blue-text {
+  color: blue;
+  font-style: italic; 
+  transition: font-size 0.3s;
+}
+
+/* Teksti suurendamine hover-olekus */
+.blue-text:hover {
+  font-size: 24px;
+}
+
+
+.green-text {
+  color: green;
+  font-weight: bold; /* Tugev tekst */
+  border: 2px solid red; /* Punane piirjoon */
+  padding: 5px;
+  transition: border-color 0.3s;
+}
+
+
+.green-text:hover {
+  border-color: brown; 
+}
+
+.styled-image {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  transition: all 0.3s;
+}
+
+/* Pildi ümardatud nurgad  */
+.styled-image:hover {
+  border-radius: 15px;
+  opacity: 0.7;
+}
