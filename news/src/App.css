@@ -1,5 +1,5 @@
 .TopBar{
-  height: 100px;
+  height: 1px;
   background-color: rgb(226, 244, 250);
   align-items: center;
   justify-content: center;
@@ -11,6 +11,6 @@
   display: flex;
   justify-content: center; /* Horisontaalne keskele */
   align-items: flex-start; /* Vertikaalselt tippu */
-  height: 100vh; /* Täielik lehe kõrgus */
+  height: 150px; /* Täielik lehe kõrgus */
 }
 
