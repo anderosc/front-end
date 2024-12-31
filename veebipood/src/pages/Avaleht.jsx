@@ -39,7 +39,7 @@ setSonum("Kogus vähendatud")
       {kogus > 0 && <button onClick={nulli}>Nulli kogus</button> }
       <br />
       <button disabled={kogus === 1} onClick={vahenda}>-</button>
-      <span>{kogus}</span>
+      <span className={kogus >= 10 ? "kuldne" : undefined}>{kogus}</span>
       <button onClick={suurenda}>+</button>
     </div>
   )

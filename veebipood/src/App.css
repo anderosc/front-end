@@ -27,3 +27,23 @@ border-width: 10px;
 .nupp:active {
 text-decoration: underline;
 }
+
+.summa-aktiivne{
+  border-color: rgb(227, 6, 140);
+}
+
+.summa-aktiivne:focus{
+  outline: none;
+}
+
+.keel-aktiivne{
+  font-weight: bold;
+}
+
+.linn-aktiivne{
+  text-decoration: underline;
+}
+
+.kuldne{
+  color: goldenrod;
+}

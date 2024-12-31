@@ -1,49 +1,21 @@
 import { useRef, useState } from 'react'
+import Tavakalkulaator from '../components/Tavakalkulaator'
+import LaenuKalkulaator from '../components/LaenuKalkulaator'
+import MaksimaalneKalkulaator from '../components/MaksimaalneKalkulaator'
 
 function Kalkulaator() {
-    const[number, setNumber] = useState(0);
-
-    const [laenusumma, setLaenusumma] = useState(0); //USE state et panna htmlis mingi koht muutuma
-    const laenusummaRef = useRef();
-
-    function arvuta() {
-        setLaenusumma(laenusummaRef.current.value * 2.637);
-
-    }
-
+  const[vaade, setVaade] = useState("tava")
+    
   return (
     <div>
-        <div> {number * 2.637}</div>
-        <button onClick={() => setNumber(7)}>7</button>
-        <button onClick={() => setNumber(8)}>8</button>
-        <button onClick={() => setNumber(9)}>9</button>
-        <button>*</button>
+      <button onClick={() => setVaade("tava")}>  Tavakalkulaator </button>
+      <button onClick={() => setVaade("laenu")}>  Laenukalkulaator </button>
+      <button onClick={() => setVaade("maksimaalne")}>  Maksimaalne limiit </button>
+
+        {vaade === "tava" && <Tavakalkulaator />}
         <br />
-        <button onClick={() => setNumber(4)}>4</button>
-        <button onClick={() => setNumber(5)}>5</button>
-        <button onClick={() => setNumber(6)}>6</button>
-        <button>-</button>
-        <br />
-        <button onClick={() => setNumber(1)} >1</button>
-        <button onClick={() => setNumber(2)}>2</button>
-        <button onClick={() => setNumber(3)}>3</button>
-        <button >+</button>
-        <br />
-        <button>/</button>
-        <button>%</button>
-        <button onClick={() => setNumber(0)}>C</button>
-        <button>=</button>
-
-        <br /> <br /> <br />
-        
-        <label > laenusumma </label>
-        <input ref={laenusummaRef} type="text" />
-        <button onClick ={arvuta}>Arvuta</button>
-        <div>{laenusumma / 30 /12 } $kuus</div>
-
-
-
-
+        {vaade === "laenu" &&  <LaenuKalkulaator /> }
+        {vaade === "maksimaalne" &&  < MaksimaalneKalkulaator /> }
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 function Avaleht() {
   const [sisselogitud, muudaSisselogitud] = useState("ei")
@@ -16,8 +16,8 @@ const kasutajaNimiRef = useRef();
         muudaSonum("Vale parool")
       }
     }
-
-    const logiValja = () => {
+  
+    const logiValja = () => { 
       muudaSisselogitud("ei");
       muudaSonum("");
     }
