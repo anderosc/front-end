@@ -1,4 +1,5 @@
 import  { useState } from 'react'
+import "./kontakt.css"
 
 function Kontakt() {
 
@@ -18,7 +19,7 @@ function Kontakt() {
   return (
     <> 
     <div>{aadress}</div>
-    <div>{telefon}</div>
+    <div className='valitud'>{telefon}</div>
     <div> {email} </div>
 
     <button onClick={ingliseks}> Muudai inglis keelde </button>
