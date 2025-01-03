@@ -14,6 +14,7 @@ function Telefon() {
       <button onClick={() => uuendaVarv("punane")}> Punane</button>
       <button onClick={() => uuendaVarv("lilla")}> Lilla</button>
 
+
       {varv === "must" && <div className='must-ring'> </div>}
       {varv === "kuldne" && <div className='kuldne-ring'> </div>}
       {varv === "sinine" && <div className='sinine-ring'> </div>}
