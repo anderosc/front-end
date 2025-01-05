@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function Tootajad() {
 
-  const [nimed, setNimed] = useState(["Katriin", "Toomas", "Liis", "Martin", "Anneli", "Priit", "Maarja", "Karl", "Helin", "Rasmus"])
+  const [nimed, setNimed] = useState(["Katriin", "Toomas", "Liisi", "Martin", "Anneli", "Priit", "Maarja", "Karl", "Helin", "Rasmus", "Maie", "Pauli"])
   
   const sorteeriAZ = () => {
     const vastus = nimed.toSorted((a ,b) => a.localeCompare(b))
@@ -16,38 +16,65 @@ function Tootajad() {
     const vastus = nimed.toSorted((a ,b) => a.localeCompare(b[3]))
     setNimed(vastus);
   }
-  const sorteeriTahtedeArv = () => {
-    const vastus = nimed.toSorted((a ,b) => a.localeCompare(b[3]))
+  const sorteeriTahtedeArvKasvavalt = () => {
+    const vastus = nimed.toSorted((a ,b) => a.length - b.length)
     setNimed(vastus);
+  }
+  const sorteeriTahtedeArvKahanevalt = ()  => {
+    const vastus = nimed.toSorted((a,b) => b.length - a.length)
+    setNimed(vastus)
+  }
+
+  //filtreerimine
+  const filtreeriIgaLoppevad = () => {
+    const vastus = nimed.filter( nimi => nimi.endsWith("i"))
+    setNimed(vastus)
+  }
+  const filtreeri5Tahelised = () => {
+    const vastus = nimed.filter(nimi => nimi.length >= 5 )
+    setNimed(vastus)
+  }
+  const filtreeri5Tahelised2 = () => {
+    const vastus = nimed.filter(nimi => nimi.length === 5 )
+    setNimed(vastus)
+  }
+  const filtreeriSisaldabMaLyhendit = () => {
+    const vastus = nimed.filter(nimi => nimi.includes("Ma", "ma"))
+    setNimed(vastus)
+  }
+  const filtreeriAT2htTeiselKohal = () => {
+    const vastus = nimed.filter(nimi => nimi.charAt(1)==="a")
+    setNimed(vastus)
+  }
+
+  const filtreeriPaarisArvT2hti = () => {
+    const vastus = nimed.filter(nimi => nimi.length % 2 === 0)
+    setNimed(vastus)
   }
 
 
-    //eesimed 10tk
-
-    
-    // sorteeri A-Z
-  // sorteeri Z-A
-  // tähed kasvavalt
-  // tähed kahanevalt
-  // neljas täht A-Z
-  // sorteeri sõnad arvu järgi
-
-  // filtreeri ????'ga lõppevad
-  // vähemalt ???? tähelised
-  // täpselt ???? tähelised
-  // '????' lühendit sisaldavad
-  // kellel on ???'s täht "????"
-  // paarisarv tähti sisaldavad
   return (
-    <div>Tootajad
-      <button onClick={sorteeriAZ}> Sorteeri AZ</button>
-      <button onClick={sorteeriZA}> Sorteeri ZA</button>
-      <button onClick={sorteeriNeljasTaht}> Sorteeri neljas täht</button>
-      <button onClick={sorteeriTahtedeArv}> Sorteeri Tähtede arv</button>
-
-
+    <div>Töötajad
+      <br />
+      <div> Tööajate arv kokku: {nimed.length} </div>
+      <br />
+      <div>Sorteeri:</div>
+      <button onClick={sorteeriAZ}>  A-Z</button>
+      <button onClick={sorteeriZA}>  Z-A</button>
+      <button onClick={sorteeriNeljasTaht}>  Neljas täht</button>
+      <button onClick={sorteeriTahtedeArvKasvavalt}>  Tähtede arv kasvavalt</button>
+      <button onClick={sorteeriTahtedeArvKahanevalt}>  Tähtede arv kahanevalt</button>
+      <br />
+      <div>Filtreeri</div>
+      <button onClick={filtreeriIgaLoppevad}> i-ga lõppevad </button>
+      <button onClick={filtreeri5Tahelised}> vähemalt 5 tähelised </button>
+      <button onClick={filtreeri5Tahelised2}> ainult 5 tähelised </button>
+      <button onClick={filtreeriSisaldabMaLyhendit}> sisaldab ma lühendit </button>
+      <button onClick={filtreeriAT2htTeiselKohal}> A täht teisel kohal </button>
+      <button onClick={filtreeriPaarisArvT2hti}> Paarisarv tähti</button>
       
     {nimed.map( nimi =>  <div key={nimi}>{nimi}</div>)}
+
     </div>
   )
 }
