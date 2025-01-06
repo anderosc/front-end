@@ -11,6 +11,7 @@ function NavigationBar() {
     </Link>
 
     
+    <button onClick={() => setCount(count +1)}> Vajuta mind {count} </button>
 
     <Link to="/Ostukorv">
     <button className = 'nupp' > Ostukorv </button>
@@ -56,12 +57,51 @@ function NavigationBar() {
     <button className = 'nupp' > Tooted </button>
     </Link>
 
+    <Link to="/halda-esindused">
+    <button className = 'nupp' > Halda Esindused </button>
+    </Link>
+
+    <Link to="/halda-hindu">
+    <button className = 'nupp' > Halda Hinnad </button>
+    </Link>
+
+    <Link to="/halda-pildid">
+    <button className = 'nupp' > HaldaPildid </button>
+    </Link>
+
+    <Link to="/halda-tootajad">
+    <button className = 'nupp' > Hald Tootajad </button>
+    </Link>
+
+    <Link to="/Halda-tooted">
+    <button className = 'nupp' > Halda Tooted </button>
+    </Link>
+
+    <Link to="/lisa-esindus">
+    <button className = 'nupp' > Lisa Esindus </button>
+    </Link>
+
+    <Link to="/lisa-hind">
+    <button className = 'nupp' > Lisa Hind </button>
+    </Link>
+
+    <Link to="/lisa-pilt">
+    <button className = 'nupp' > Lisa pILT </button>
+    </Link>
+
+    <Link to="/lisa-toode">
+    <button className = 'nupp' > Lisa Toode </button>
+    </Link>
+
+    <Link to="/lisa-tootaja">
+    <button className = 'nupp' > Lisa Tootaja </button>
+    </Link>
 
 
 
 
 
-    <button onClick={() => setCount(count +1)}> Vajuta mind {count} </button>
+
 
     </div>
   )

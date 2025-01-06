@@ -18,5 +18,8 @@ createRoot(document.getElementById('root')).render(
 
 
 
-// 1. react router drom, uus projekt'
-// 2. usedate, useref, &&, oneclick funktsioonid
+// 1. react-router-dom. uue projekti tekitamine.
+// 2. useState. useRef. && ehk dünaamiline väljakuvamine. onClick. funktsioonid
+// 3. favicon, font, Firebase üleslaadimine, dünaamiline CSS, componentide väljatõste, kalkulaatorid 
+// 4. Arrays: väljakuvamine, key, sort, filter
+// 5. Arrays: kustutamine (splice), mälukoht (slice), faili tõstmine (.json), lisamine (push)

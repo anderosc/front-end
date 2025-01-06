@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "1persons",
-    "public": "build",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

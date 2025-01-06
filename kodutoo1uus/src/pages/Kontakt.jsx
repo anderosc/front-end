@@ -1,5 +1,4 @@
 import  { useState } from 'react'
-import "./kontakt.css"
 
 function Kontakt() {
 

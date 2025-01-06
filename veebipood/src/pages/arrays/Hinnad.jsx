@@ -1,4 +1,6 @@
 import { useState } from "react"
+import hinnadFailist from '../../data/hinnad.json'
+// .. on kaust üles
 
 // JavaScriptis on 3 tüüpi väärtusi:
 // number -> teha arvutusi, teha võrdusi kas on suurem/väiksem
@@ -14,7 +16,9 @@ import { useState } from "react"
 // {nimi: "Coca", hind: 99, aktiivne: true}
 
 function Hinnad() {
-    const[hinnad, setHinnad] = useState([245, 673, 58, 9, 310, 486, 7, 531, 86, 192])
+    // const[hinnad, setHinnad] = useState([245, 673, 58, 9, 310, 486, 7, 531, 86, 192])
+    const[hinnad, setHinnad] = useState(hinnadFailist)
+
 //const abil loon uusi muutujaid, mille sisse panen võrdusmärgiga väärtusi
     const filtreeriSuuremKui100 = () => {
 
@@ -25,16 +29,39 @@ function Hinnad() {
 
         const sorteeriKahanevalt = () => {
            
-            hinnad.sort((a,b) => b - a)
-            setHinnad(hinnad.slice())
+            // hinnad.sort((a,b) => b - a)
+            // setHinnad(hinnad.slice())
+            const vastus = hinnad.toSorted((a,b) => a-b)
+            setHinnad(vastus)
         }
         const sorteeriKasvavalt = () => {
             const vastus = hinnad.toSorted((a,b) => a-b);            
             setHinnad(vastus)
         }
+        //hinna kustutamine
 
+        // const kustutaHind = (index) => {
+        //     hinnad.splice(index, 1); 
+        //     setHinnad(hinnad.slice())
+        // }
+        // const kustutaTeine  = () => {
+        //     hinnad.splice(1, 1); 
+        //     setHinnad(hinnad.slice())
+        // }
+        // const kustutaKolmas = () => {
+        //     hinnad.splice(2, 1); 
+        //     setHinnad(hinnad.slice())
+        // }
+
+
+        //originaali
+        const originaali = () => {
+            setHinnad(hinnadFailist)
+        }
   return (
     <div>
+
+        <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
                   <div> Hindade arv kokku:: {hinnad.length} </div>
 
         <button onClick={sorteeriKasvavalt}> Sorteeri kasvavalt </button>
@@ -42,7 +69,7 @@ function Hinnad() {
 
 
         <button onClick={ filtreeriSuuremKui100} >  Jäta alles suuremad kui 100</button>
-        {hinnad.map(hind => <div key={hind} > {hind} </div>)}
+        {hinnad.map((hind, index) => <div key={hind} > {hind} <button onClick={() => kustutaHind(index)}>x</button> </div>)}
     </div>
   )
 }
