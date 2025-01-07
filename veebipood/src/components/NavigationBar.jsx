@@ -61,7 +61,7 @@ function NavigationBar() {
     <button className = 'nupp' > Halda Esindused </button>
     </Link>
 
-    <Link to="/halda-hindu">
+    <Link to="/halda-hinnad">
     <button className = 'nupp' > Halda Hinnad </button>
     </Link>
 

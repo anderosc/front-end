@@ -11,7 +11,7 @@ import { useState } from "react"
 //key={} on alati htmlis .map, vahetult simese tagi küljes
 //see võimaldab reactil meelde jätta elemente, et kui toimub rerenderus
 //siis ei pea ueusti seda tsüklit tegema
-
+// sd
 //rerenderus --> iga kui kord läheb useState set funktsioon käima
 //renderdus -- html väljakuvamine/printimine, koodi näitamine, brauseris
 
@@ -31,7 +31,7 @@ function Ostukorv() {
       <div> Kokku: {tooted.length} </div>
       <button onClick={() => setTooted([])} >tühjenda</button>
       </>}
-      
+       
       {tooted.map((toode, index) => 
         <div key={toode}>
            {index +1}. {toode} 
