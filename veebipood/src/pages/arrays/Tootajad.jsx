@@ -1,8 +1,9 @@
 import { useState } from "react"
+import TootajadData from '../../data/tootajad.json'
 
 function Tootajad() {
 
-  const [nimed, setNimed] = useState(["Katriin", "Toomas", "Liisi", "Martin", "Anneli", "Priit", "Maarja", "Karl", "Helin", "Rasmus", "Maie", "Pauli"])
+  const [nimed, setNimed] = useState(TootajadData)
   
   const sorteeriAZ = () => {
     const vastus = nimed.toSorted((a ,b) => a.localeCompare(b))

@@ -47,6 +47,7 @@ function App() {
       <Route path="/pildid" element={< Pildid />} />
       <Route path="/tootajad" element={< Tootajad />} />
       <Route path="/tooted" element={< Tooted />} />
+      
       <Route path="/halda-esindused" element={< HaldaEsindusi/>} />
       <Route path="/halda-pildid" element={< HaldaPildid />} />
       <Route path="/halda-tooted" element={< HaldaTooted />} />

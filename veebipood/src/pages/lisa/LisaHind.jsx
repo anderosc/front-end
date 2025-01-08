@@ -1,11 +1,11 @@
 import { useRef } from 'react'
-import hinnadData from '../../data/hinnad.json'
+import hinnadFailist from '../../data/hinnad.json'
 
 
 function LisaHind() {
     const hindRef = useRef()
     const lisa = () => {
-        hinnadData.push(hindRef.current.value);
+        hinnadFailist.push(hindRef.current.value);
         hindRef.current.value = "";
     }
 

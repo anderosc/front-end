@@ -57,6 +57,8 @@ function NavigationBar() {
     <button className = 'nupp' > Tooted </button>
     </Link>
 
+    <br /><br />
+
     <Link to="/halda-esindused">
     <button className = 'nupp' > Halda Esindused </button>
     </Link>
@@ -73,9 +75,11 @@ function NavigationBar() {
     <button className = 'nupp' > Hald Tootajad </button>
     </Link>
 
-    <Link to="/Halda-tooted">
+    <Link to="/halda-tooted">
     <button className = 'nupp' > Halda Tooted </button>
     </Link>
+
+    <br /><br />
 
     <Link to="/lisa-esindus">
     <button className = 'nupp' > Lisa Esindus </button>

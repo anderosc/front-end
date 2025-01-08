@@ -1,4 +1,4 @@
-// let fullName = "Andero";
+// let fullName = "gimmii";
 
 // document.getElementById("p1").textContent = `Your name is ${fullName}`
 
@@ -99,3 +99,140 @@
 //     console.log("YOU AREnt")
 
 // }
+
+// ternary operator = a shortcut to if and ese statements
+// condititon ? codeIftrue : if false
+
+// let = age = 30;
+
+// let message = age >= 18 ? "You are an adult" : "You are a minor";
+// console.log(message)
+
+// let time = 16;
+// let greeting = time > 12 ? "Moring" : "Good afternoon"
+// console.log(greeting)
+
+// let day = ;
+
+// switch(day){
+//     case 1:
+//         console.log("Monday");
+//         break;
+//     case 2:
+//         console.log("Tuesday");
+//         break;
+//     case 3:
+//         console.log("Wednesday");
+//         break;
+//     case 4:
+//         console.log("Thursday");
+//         break;
+//     default:
+//         console.log("No day")
+// }
+
+// let testScore = 71;
+// let letterGrade;
+
+// switch(true){
+//     case testScore >=90:
+//     letterGrade = "A"
+//     break;
+//     case testScore >=80:
+//         letterGrade ="B"
+//         break;
+//     case testScore >=70:
+//         letterGrade = "C"
+//         break
+//     default:
+//         letterGrade = "F"
+// }
+// console.log(letterGrade)
+
+
+// let userName = "   Test   ";
+// let result = userName.startsWith(" ")
+
+// result === true ? userName = userName.trim()  : undefined;
+// console.log(userName)
+
+// const fullName = "Mari Matt"
+
+// let firstName = fullName.slice(0, fullName.indexOf(" "));
+// let lastName = fullName.slice(fullName.indexOf(" ") +1 , fullName.length )
+
+// console.log(firstName)
+// console.log(lastName)
+
+
+
+// //Method chaining - calling one method after another in one continuous line of code
+
+// //  --- NO METHOD CHAINING ---
+
+//     let userName = window.prompt("Enter your username");
+
+//     // userName = userName.trim();
+//     // let letter = userName.charAt(0);
+//     // letter = letter.toUpperCase();
+
+//     // let extraChars = userName.slice(1)
+//     // extraChars = extraChars.toLowerCase();
+
+//     // userName = letter + extraChars;
+//     // console.log(userName);
+
+// /// --- METHOD CAHINING
+// userName= userName.trim().charAt(0).toUpperCase() + userName.trim().slice(1).toLowerCase();
+// console.log(userName);
+
+
+
+// logicalo peratos
+// AND = &&    OR = ||     NOT = !
+// const temp = 32
+
+// if(temp > 0 && temp < 30){
+//     console.log("Wheater is good")
+// }
+// else {
+//     console.log("Wheater is b")
+
+// }
+// const isSunny = false;
+
+// if(!isSunny){
+//     console.log(isSunny)
+// }
+// else{
+//     console.log("idk")
+// }
+
+
+//
+// = assignment operator
+// == comparsion operator(compare if values are equal)
+// ===strict equality operator(compare if values and datatpes are equal)
+// !=inequality operator (("is this NOT EQUAL to that"))
+// !== strict inequality operator
+
+
+// const PI = 3.12;
+// if(PI !== 3.12){
+//     console.log("nah")
+// }
+// else{
+//     console.log("truee")
+// }
+
+
+
+//while loop - reapeat some code while condition is true
+let username = "";
+while(username === ""){
+    username = window.prompt("Enter username");
+}
+console.log(`you are ${username}`)
+
+
+

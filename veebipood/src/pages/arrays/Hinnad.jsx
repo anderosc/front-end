@@ -69,7 +69,7 @@ function Hinnad() {
 
 
         <button onClick={ filtreeriSuuremKui100} >  Jäta alles suuremad kui 100</button>
-        {hinnad.map(hind => <div key={hind} > {hind} <button >x</button> </div>)}
+        {hinnad.map(hind => <div key={hind} > {hind}  </div>)}
     </div>
   )
 }

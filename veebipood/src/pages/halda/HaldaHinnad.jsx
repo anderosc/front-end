@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import hinnadFailist from '../../data/hinnad.json'
+import hinnadFailist from '../../data/hinnad.json';
 
 function HaldaHinnad() {
     const [hinnad, setHinnad] = useState(hinnadFailist);
-
+    console.log(hinnad)
+    
     const kustutaHind = (index) => {
         hinnadFailist.splice(index, 1);
         setHinnad(hinnadFailist.slice());
@@ -21,16 +22,16 @@ function HaldaHinnad() {
                     <th> Kustua</th>
                 </tr>
             </thead>
-        <tbody>
+            <tbody>
                 
             
-            {hinnad.map((hind, index) => 
-            <tr key={hind}> 
-            <td>{index}</td>
-            <td>{hind} </td>
-            <td><button onClick={kustutaHind(index)}>x</button> </td>
-            </tr>)}
-        </tbody>
+                {hinnad.map((hind, index) => 
+                <tr key={hind}> 
+                <td>{index}</td>
+                <td>{hind} </td>
+                <td><button onClick={kustutaHind(index)}>x</button> </td>
+                </tr>)}
+            </tbody>
         </table>
     </div>
   )
