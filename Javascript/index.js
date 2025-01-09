@@ -228,11 +228,38 @@
 
 
 //while loop - reapeat some code while condition is true
-let username = "";
-while(username === ""){
-    username = window.prompt("Enter username");
+// let username = "";
+// while(username === ""){
+//     username = window.prompt("Enter username");
+// }
+// console.log(`you are ${username}`)
+
+// for(let i=1; i<=20; i++){
+
+//     if(i==13){
+//         break;
+//     }
+//     else{
+//         console.log(i);
+
+//     }
+// }
+
+
+
+// function happyBirthday () {
+//     console.log("Happy bIRTHDAY")
+// }
+// let day = 3
+// if(day == 2){
+//     console.log("Its tuesday")
+// }
+// else{
+//     happyBirthday()
+// }
+
+function add(x,y){
+    
+    return x+y;
 }
-console.log(`you are ${username}`)
-
-
-
+console.log(add(2, 3))

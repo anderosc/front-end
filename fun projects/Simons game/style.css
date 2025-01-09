@@ -1,0 +1,60 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em; 
+    
+}
+/* 2em = 200% */
+
+#countLabel{
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#btnContainer{
+    text-align: center;
+}
+.buttons{
+    padding: 10px 20px;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 2.25s;
+}
+.buttons:hover{
+    background-color: rgb(207, 22, 28);
+}
+#p{
+    font-size: 10px;
+}
+#upLeft{
+    background-color:red ;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+#upRight{
+    background-color:green ;
+    padding: 10px 20px;
+    cursor: pointer;
+
+
+}
+#downLeft{
+    background-color:blue ;
+    padding: 10px 20px;
+    cursor: pointer;
+
+
+}
+#downRight{
+    background-color:yellow ;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+#look{
+    text-align: center;
+}

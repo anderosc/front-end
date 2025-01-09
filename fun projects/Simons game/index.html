@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simons Game Simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id ="look">
+    
+    <h2>Simons Game</h2>
+    <p id="p"> Simon’s Game is a memory challenge where players repeat an ever-growing
+         sequence of lights and sounds. The game starts with one button lighting up,
+          and the player must press the same button. Each round, Simon adds another 
+          step to the sequence, which the player must replicate in order. The game 
+          continues until the player makes a mistake, and the score reflects the number 
+          of correctly repeated steps. Variations may include faster sequences or 
+          multiplayer turns.
+    </p>
+    <br>
+    <br>
+    <button onclick="gameStart()" id="start">START/RESET</button>
+
+    <br>
+    <button id="upLeft"></button>
+    <button id="upRight"></button>
+<br>
+    <button id="downLeft"></button>
+    <button id="downRight"></button>
+<br>
+<br>
+   <div><p>Your score:</p> <label id="scoreCounter"></label></div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
