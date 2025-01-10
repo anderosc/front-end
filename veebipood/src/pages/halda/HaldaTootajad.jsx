@@ -29,7 +29,7 @@ function HaldaTootajad() {
                 <tr key={tootaja}> 
                 <td>{index}</td>
                 <td>{tootaja} </td>
-                <td><button onClick={kustutaTootaja(index)}>x</button> </td>
+                <td><button onClick={() => kustutaTootaja(index)}>x</button> </td>
                 </tr>)}
             </tbody>
         </table>

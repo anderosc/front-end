@@ -22,6 +22,7 @@ import HaldaHinnad from './pages/halda/HaldaHinnad'
 import LisaHind from './pages/lisa/LisaHind';
 import LisaPilt from './pages/lisa/LisaPilt';
 import LisaEsindus from './pages/lisa/LisaEsindus';
+import LisaTootaja from './pages/lisa/LisaTootaja';
 
 
 
@@ -59,6 +60,8 @@ function App() {
       <Route path="/lisa-pilt" element={< LisaPilt />} />
       <Route path="/lisa-toode" element={< LisaToode />} />
       <Route path="/lisa-esindus" element={< LisaEsindus />} />
+      <Route path="/lisa-tootaja" element={< LisaTootaja />} />
+
 
 
 

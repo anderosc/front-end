@@ -29,7 +29,7 @@ function HaldaHinnad() {
                 <tr key={hind}> 
                 <td>{index}</td>
                 <td>{hind} </td>
-                <td><button onClick={kustutaHind(index)}>x</button> </td>
+                <td><button onClick={() => kustutaHind(index)}>x</button> </td>
                 </tr>)}
             </tbody>
         </table>

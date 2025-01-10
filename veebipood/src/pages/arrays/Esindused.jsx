@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import esindusedFailist from '../../data/esindused.json';
+
 
 // === vasak ja parem identsed
 // =  väärtuse andmine
@@ -14,7 +16,7 @@ import { useState } from 'react'
 function Esindused() {
     //    muutuja, muutja
     const [linn, setLinn] = useState("Tallinn");
-    const[keskused, setKeskused] = useState(["Ülemiste", "Rocca al Mare", "Magistral", "Vesse", "kristiine", "Järveotsa"]);
+    const[keskused, setKeskused] = useState(esindusedFailist);
 
 
     const sorteeriAZ = () =>{

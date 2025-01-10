@@ -1,9 +1,21 @@
-import React from 'react'
+import { useRef } from 'react';
+import tootajadFailist from '../../data/tootajad.json';
 
 function LisaTootaja() {
-  return (
-    <div>LisaTootaja</div>
-  )
+    const tootajaRef = useRef();
+
+    const lisa = () => {
+        tootajadFailist.push(tootajaRef.current.value);
+        tootajaRef.current.value = "";
+    };
+
+    return (
+        <div>
+            <label>Töötaja</label> <br />
+            <input ref={tootajaRef} type="text" /> <br />
+            <button onClick={() => lisa}>Lisa</button> <br />
+        </div>
+    );
 }
 
-export default LisaTootaja
+export default LisaTootaja;
