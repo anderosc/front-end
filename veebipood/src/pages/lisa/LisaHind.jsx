@@ -5,7 +5,7 @@ import hinnadFailist from '../../data/hinnad.json'
 function LisaHind() {
     const hindRef = useRef()
     const lisa = () => {
-        hinnadFailist.push(hindRef.current.value);
+        hinnadFailist.push(Number(hindRef.current.value));
         hindRef.current.value = "";
     }
 

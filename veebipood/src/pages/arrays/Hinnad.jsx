@@ -1,5 +1,6 @@
 import { useState } from "react"
 import hinnadFailist from '../../data/hinnad.json'
+import { Link } from "react-router-dom"
 // .. on kaust üles
 
 // JavaScriptis on 3 tüüpi väärtusi:
@@ -58,7 +59,16 @@ function Hinnad() {
         const originaali = () => {
             setHinnad(hinnadFailist)
         }
+        const arvutaKokku = () => {
+            //kuna kivitatakse kohe, siis SET panna ei saa - hakkab loopima
+            let summa = 0;
+            hinnad.forEach(hind => summa = summa + hind);
+            return summa;
+        }
+        
   return (
+
+
     <div>
 
         <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
@@ -69,7 +79,13 @@ function Hinnad() {
 
 
         <button onClick={ filtreeriSuuremKui100} >  Jäta alles suuremad kui 100</button>
-        {hinnad.map(hind => <div key={hind} > {hind}  </div>)}
+        {hinnad.map((hind, index) => 
+        <div key={hind} >
+            {hind}  
+            <Link to={"/hind/" + index}> <button>Vt lähemalt</button></Link>
+            </div>)}
+        <br />
+        <div>Kokku: {arvutaKokku()} </div>
     </div>
   )
 }

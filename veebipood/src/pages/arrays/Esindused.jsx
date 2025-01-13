@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import esindusedFailist from '../../data/esindused.json';
+import { Link } from 'react-router-dom';
 
 
 // === vasak ja parem identsed
@@ -45,6 +46,12 @@ function Esindused() {
       const vastus = keskused.filter(keskus => keskus.endsWith("e"))
       setKeskused(vastus);
     }
+    const arvutaKokku = () => {
+      let sum =0;
+      // += lühend
+      keskused.forEach(keskus => sum = sum + keskus.length);
+      return sum;
+    }
 
 
   return (
@@ -74,8 +81,14 @@ function Esindused() {
           <button onClick={filtreeriNeljasTahtS} >Fltreeri neljas täht S </button>
 
 
+            <br />
+            {keskused.map((keskus, index) => 
+            <div key={keskus}>
+              {keskus}   
+              <Link to={"/esindus/" + index}>  <button>Vt lähemalt </button></Link>
+            </div>)}
 
-            {keskused.map(keskus => <div key={keskus}>{keskus}</div>)}
+            <div>Tähed kokkku: {arvutaKokku()} </div>
             </div>}
 
     </div>

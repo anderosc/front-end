@@ -23,6 +23,16 @@ import LisaHind from './pages/lisa/LisaHind';
 import LisaPilt from './pages/lisa/LisaPilt';
 import LisaEsindus from './pages/lisa/LisaEsindus';
 import LisaTootaja from './pages/lisa/LisaTootaja';
+import YksHind from './pages/yks/YksHind';
+import YksPilt from './pages/yks/YksPilt';
+import Ykstoode from './pages/yks/Ykstoode';
+import YksEsndus from './pages/yks/YksEsndus';
+import YksTootaja from './pages/yks/YksTootaja';
+import MuudaEsindus from './pages/muuda/MuudaEsindus';
+import MuudaPilt from './pages/muuda/MuudaPilt';
+import MuudaToode from './pages/muuda/MuudaToode';
+import MuudaHind from './pages/muuda/MuudaHind';
+import MuudaTootaja from './pages/muuda/MuudaTootaja';
 
 
 
@@ -62,7 +72,18 @@ function App() {
       <Route path="/lisa-esindus" element={< LisaEsindus />} />
       <Route path="/lisa-tootaja" element={< LisaTootaja />} />
 
+{/* Yks peale sattumiseks ei pane teda navbari /menüüsse, tema peale satun nt avaleleht või toote lehelt: .map() seest */}
+      <Route path="/hind/:i" element={< YksHind />} />
+      <Route path="/pilt/:jrknr" element={< YksPilt />} />
+      <Route path="/toode" element={< Ykstoode />} />
+      <Route path="/esindus/:index" element={< YksEsndus />} />
+      <Route path="/tootaja" element={< YksTootaja />} />
 
+      <Route path="/muuda-hind/:index" element={< MuudaHind />} />
+      <Route path="/muuda-pilt" element={< MuudaPilt />} />
+      <Route path="/muuda-toode" element={< MuudaToode />} />
+      <Route path="/muuda-esindus" element={< MuudaEsindus />} />
+      <Route path="/muuda-tootaja" element={< MuudaTootaja />} />
 
 
       <Route path="*" element={<Notfound />} />

@@ -67,8 +67,7 @@ function TagasisideAndjad() {
                     <div key={index}>
                         {nimi} 
                         <button onClick={() => kustutaNimi(index)}>x</button>
-                    </div>
-                ))}
+                    </div> ))}
             </div>
             <div >
                 <label >Lisa uus nimi:</label>
@@ -76,7 +75,11 @@ function TagasisideAndjad() {
                 <button onClick={lisaNimi}>Lisa</button>
             </div>
 
+
+
         </div>
+
+
     );
 }
 

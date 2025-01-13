@@ -1,5 +1,6 @@
 import { useState } from "react"
 import PildidJSON from '../../data/pildid.json'
+import { Link } from "react-router-dom";
 
 function Pildid() {
     const [pildid, setPildid] = useState(PildidJSON);
@@ -33,7 +34,11 @@ function Pildid() {
         <button onClick={sorteeriKahanevalt}>Sorteeri faili nime pikkus kahavevanlt</button>
 
         <button onClick={filtreeriSydamed} > Jäta alles südamed </button>
-        {pildid.map(pilt => <img key={pilt} src={pilt} alt="" /> )}
+        {pildid.map((pilt, index) => 
+            <Link to={"/pilt/" + index} key={pilt} > 
+            <img  src={pilt} alt="" /> 
+            </Link>
+            )}
     </div>
   )
 }
