@@ -10,7 +10,7 @@ function addTask(){
    tasks.push(document.getElementById("taskValue").value)
     renderTasks()
 
-    color: rgb(246, 4, 4);
+    // color: rgb(246, 4, 4);
 }
 function remove(index){
     tasks.splice(index, 1)
