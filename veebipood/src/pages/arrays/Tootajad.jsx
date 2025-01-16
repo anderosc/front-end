@@ -1,5 +1,6 @@
 import { useState } from "react"
 import TootajadData from '../../data/tootajad.json'
+import { Link } from "react-router-dom"
 
 function Tootajad() {
 
@@ -74,7 +75,11 @@ function Tootajad() {
       <button onClick={filtreeriAT2htTeiselKohal}> A täht teisel kohal </button>
       <button onClick={filtreeriPaarisArvT2hti}> Paarisarv tähti</button>
       
-    {nimed.map( nimi =>  <div key={nimi}>{nimi}</div>)}
+    {nimed.map( (nimi, i) =>  
+    <div key={nimi}>
+      {nimi} 
+      <Link to={"/tootaja/" +i}>  <button>Vt lähemalt</button></Link>
+      </div>)}
 
     </div>
   )

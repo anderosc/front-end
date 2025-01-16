@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import TootajadData from '../../data/tootajad.json';
+import { Link } from 'react-router-dom';
 
 function HaldaTootajad() {
     const [tootajad, setTootajad] = useState(TootajadData);
@@ -20,6 +21,7 @@ function HaldaTootajad() {
                     <th> Index</th>
                     <th> Hind</th>
                     <th> Kustuta</th>
+                    <th> Muuda</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +32,7 @@ function HaldaTootajad() {
                 <td>{index}</td>
                 <td>{tootaja} </td>
                 <td><button onClick={() => kustutaTootaja(index)}>x</button> </td>
+                <td> <Link to={"/muuda-tootaja/" + index}>  <button>Muuda</button> </Link></td>
                 </tr>)}
             </tbody>
         </table>

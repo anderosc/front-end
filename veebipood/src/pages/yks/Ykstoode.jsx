@@ -1,9 +1,18 @@
-import React from 'react'
+import { useParams } from "react-router-dom";
+import tootajadData from "../../data/tooted.json"
 
 function Ykstoode() {
+  const {i} =useParams();
+  const tootaja = tootajadData[i]
+
+  if(tootaja === undefined){
+    return <div> Töötajat ei leitud </div>
+  }
   return (
-    <div>Ykstoode</div>
-  )
+    <div>
+    <div>{tootaja}</div>
+   </div>
+   )
 }
 
 export default Ykstoode

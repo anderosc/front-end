@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PildidJSON from '../../data/pildid.json'
+import { Link } from 'react-router-dom';
 
 
 function HaldaPildid() {
@@ -18,6 +19,11 @@ const kustutaKolmas = () => {
     setPildid(PildidJSON.slice())
 }
 
+const kustuta = (index) => {
+  PildidJSON.splice(index, 1);
+  setPildid(PildidJSON.slice());
+}
+
   return (
     <div>
       
@@ -25,8 +31,29 @@ const kustutaKolmas = () => {
       <button disabled={pildid.length <2} onClick={kustutaTeine}>Kustuta teine pilt</button>
       <button disabled={pildid.length <3} onClick={kustutaKolmas}>Kustuta kolmas pilt</button>
       <br />
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <td> Index </td>
+            <td> Pilt </td>
+            <td> Kustuta </td>
+            <td> Muuda </td>
+          </tr>
+        </thead>
+        <tbody>
+        {pildid.map((pilt, index) => 
+         
+          <tr key={pilt}> 
+            <td>{index}</td>
+            <td><img  src={pilt} alt="" /> </td>
+            <td> <button onClick={() =>kustuta(index)}>x</button></td>
+            <td> <Link to={"/muuda-pilt/" + index}> <button>Muuda</button></Link> </td>
+          
+        </tr>)}
+        </tbody>
+      </table>
 
-      {pildid.map(pilt => <img key={pilt} src={pilt} alt="" /> )}
 
     </div>
   )

@@ -1,8 +1,19 @@
-import React from 'react'
+import { useParams } from "react-router-dom"
+import tootajadFailist from "../../data/tootajad.json"
+
 
 function YksTootaja() {
+  const {i} =useParams();
+  const tootaja = tootajadFailist[i]
+
+  if(tootaja === undefined){
+    return <div> Töötajat ei leitud </div>
+  }
+
   return (
-    <div>YksTootaja</div>
+    <div>
+    <div>{tootaja}</div>
+   </div>
   )
 }
 

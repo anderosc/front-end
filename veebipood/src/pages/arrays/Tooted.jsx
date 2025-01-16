@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 function Tooted() {
 
@@ -91,8 +92,11 @@ function Tooted() {
  
 
       <br />
-      {tooted.map(toode =>  <div key={toode}> {toode} </div>)}
-      
+      {tooted.map((toode, index) => 
+        <div key={toode} >
+            {toode}  
+            <Link to={"/toode/" + index}> <button>Vt lähemalt</button></Link>
+            </div>)}      
 
 
     </div>

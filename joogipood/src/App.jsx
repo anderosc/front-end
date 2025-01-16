@@ -3,6 +3,7 @@ import './App.css'
 import Avaleht from './pages/Avaleht'
 import LisaJook from './pages/LisaJook'
 import HaldaJoogid from './pages/HaldaJoogid'
+import Jook from './pages/Jook'
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
         <Route path="/avaleht" element={<Avaleht />}/>
         <Route path="/lisa-jook" element={< LisaJook />}/>
         <Route path="/halda-joogid" element={< HaldaJoogid />}/>
+        <Route path="/jook/:index" element={< Jook />}/>
+
         </Routes>
       </div>
 

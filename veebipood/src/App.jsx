@@ -75,15 +75,15 @@ function App() {
 {/* Yks peale sattumiseks ei pane teda navbari /menüüsse, tema peale satun nt avaleleht või toote lehelt: .map() seest */}
       <Route path="/hind/:i" element={< YksHind />} />
       <Route path="/pilt/:jrknr" element={< YksPilt />} />
-      <Route path="/toode" element={< Ykstoode />} />
+      <Route path="/toode/:i" element={< Ykstoode />} />
       <Route path="/esindus/:index" element={< YksEsndus />} />
-      <Route path="/tootaja" element={< YksTootaja />} />
+      <Route path="/tootaja/:i" element={< YksTootaja />} />
 
       <Route path="/muuda-hind/:index" element={< MuudaHind />} />
-      <Route path="/muuda-pilt" element={< MuudaPilt />} />
-      <Route path="/muuda-toode" element={< MuudaToode />} />
-      <Route path="/muuda-esindus" element={< MuudaEsindus />} />
-      <Route path="/muuda-tootaja" element={< MuudaTootaja />} />
+      <Route path="/muuda-pilt/:index" element={< MuudaPilt />} />
+      <Route path="/muuda-toode/:index" element={< MuudaToode />} />
+      <Route path="/muuda-esindus/:index" element={< MuudaEsindus />} />
+      <Route path="/muuda-tootaja/:index" element={< MuudaTootaja />} />
 
 
       <Route path="*" element={<Notfound />} />
