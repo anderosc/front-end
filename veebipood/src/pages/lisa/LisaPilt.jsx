@@ -5,6 +5,7 @@ import PildidJSON from '../../data/pildid.json'
 function LisaPilt() {
     const piltRef = useRef()
     const lisa = () => {
+      //  const pilt {url, pealkiri, sisu} võiks lisada
         PildidJSON.push(piltRef.current.value)
     }
 

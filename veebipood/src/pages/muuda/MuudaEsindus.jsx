@@ -6,15 +6,27 @@ function MuudaEsindus() {
   const {index} = useParams();
   const leitud = esindusedFailist[index];
   const esindusRef = useRef();
+  const telRef = useRef();
+  const aadressRef = useRef();
 
   const muuda = () =>{
-    esindusedFailist[index] = esindusRef.current.value;
+    esindusedFailist[index] = {
+      "nimi": esindusRef.current.value,
+      "tel" : telRef.current.value,
+      "aadress": aadressRef.current.value
+      }
+
   }
 
   return (
-    <div> a
+    <div> 
       <label > Esindus</label>
-      <input ref={esindusRef} type="text" defaultValue={leitud}  />
+      <input ref={esindusRef} type="text" defaultValue={leitud.nimi}  /><br />
+      <label > Tel</label>
+      <input ref={telRef} type="text" defaultValue={leitud.tel}  /><br />
+      <label > Aadress</label>
+      <input ref={aadressRef} type="text" defaultValue={leitud.aadress}  /><br />
+
       <Link to="/halda-esindused"> <button onClick={muuda}> Muuda</button> </Link> 
     </div>
   )

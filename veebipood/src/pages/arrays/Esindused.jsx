@@ -21,35 +21,35 @@ function Esindused() {
 
 
     const sorteeriAZ = () =>{
-      const vastus= keskused.toSorted((a ,b) => a.localeCompare(b))
+      const vastus= keskused.toSorted((a ,b) => a.nimi.localeCompare(b.nimi))
         setKeskused(vastus)
     }
     const sorteeriZA = () =>{
-      const vastus= keskused.toSorted((a ,b) => b.localeCompare(a))
+      const vastus= keskused.toSorted((a ,b) => b.nimi.localeCompare(a.nimi))
       setKeskused(vastus)
     }
     const sorteeriKolmasTahtAZ = () =>{
-      const vastus= keskused.toSorted((a ,b) => b[2].localeCompare(a[2]))
+      const vastus= keskused.toSorted((a ,b) => b.nimi[2].localeCompare(a.nimi[2]))
       setKeskused(vastus)
     }
 
     const filtreeri9Tahelised = () =>{
-      const vastus= keskused.filter(keskus => keskus.length === 9)
+      const vastus= keskused.filter(keskus => keskus.nimi.length === 9)
       setKeskused(vastus)
     }
     const filtreeriNeljasTahtS = () =>{
-      const vastus= keskused.filter(keskus => keskus[3] === "s")
+      const vastus= keskused.filter(keskus => keskus.nimi[3] === "s")
       setKeskused(vastus)
     }
 
     const filtreeriEgaLoppevad = () => {
-      const vastus = keskused.filter(keskus => keskus.endsWith("e"))
+      const vastus = keskused.filter(keskus => keskus.nimi.endsWith("e"))
       setKeskused(vastus);
     }
     const arvutaKokku = () => {
       let sum =0;
       // += lühend
-      keskused.forEach(keskus => sum = sum + keskus.length);
+      keskused.forEach(keskus => sum = sum + keskus.nimi.length);
       return sum;
     }
 
@@ -82,10 +82,10 @@ function Esindused() {
 
 
             <br />
-            {keskused.map((keskus, index) => 
-            <div key={keskus}>
-              {keskus}   
-              <Link to={"/esindus/" + index}>  <button>Vt lähemalt </button></Link>
+            {keskused.map(keskus => 
+            <div key={keskus.nimi}>
+              {keskus.nimi}   
+              <Link to={"/esindus/" + keskus.nimi}>  <button>Vt lähemalt </button></Link>
             </div>)}
 
             <div>Tähed kokkku: {arvutaKokku()} </div>

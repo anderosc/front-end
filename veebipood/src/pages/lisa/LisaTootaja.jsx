@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import tootajadFailist from '../../data/tootajad.json';
 
 function LisaTootaja() {
+    //võtmed --> Nimi, telefon, amet (ja võib juurde pann)
+    // .push()
     const tootajaRef = useRef();
 
     const lisa = () => {

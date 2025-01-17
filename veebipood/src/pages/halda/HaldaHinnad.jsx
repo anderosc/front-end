@@ -20,6 +20,7 @@ function HaldaHinnad() {
                 <tr> 
                     <th> Index</th>
                     <th> Hind</th>
+                    <th> Lisaja</th>
                     <th> Kustua</th>
                     <th> Muuda</th>
                 </tr>
@@ -28,9 +29,10 @@ function HaldaHinnad() {
                 
             
                 {hinnad.map((hind, index) => 
-                <tr key={hind}> 
+                <tr key={hind.number}> 
                 <td>{index}</td>
-                <td>{hind} </td>
+                <td>{hind.number} </td>
+                <td>{hind.lisaja} </td>
                 <td><button onClick={() => kustutaHind(index)}>x</button> </td>
                 <td> <Link to={"/muuda-hind/" + index}> <button>Muuda</button> </Link></td>
                 </tr>)}

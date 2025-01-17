@@ -33,6 +33,9 @@ import MuudaPilt from './pages/muuda/MuudaPilt';
 import MuudaToode from './pages/muuda/MuudaToode';
 import MuudaHind from './pages/muuda/MuudaHind';
 import MuudaTootaja from './pages/muuda/MuudaTootaja';
+import HaldaKasutajad from './pages/auth/HaldaKasutajad';
+import Login from './pages/auth/Login';
+import Registeeru from './pages/auth/Registeeru';
 
 
 
@@ -76,7 +79,7 @@ function App() {
       <Route path="/hind/:i" element={< YksHind />} />
       <Route path="/pilt/:jrknr" element={< YksPilt />} />
       <Route path="/toode/:i" element={< Ykstoode />} />
-      <Route path="/esindus/:index" element={< YksEsndus />} />
+      <Route path="/esindus/:nimi" element={< YksEsndus />} />
       <Route path="/tootaja/:i" element={< YksTootaja />} />
 
       <Route path="/muuda-hind/:index" element={< MuudaHind />} />
@@ -84,6 +87,12 @@ function App() {
       <Route path="/muuda-toode/:index" element={< MuudaToode />} />
       <Route path="/muuda-esindus/:index" element={< MuudaEsindus />} />
       <Route path="/muuda-tootaja/:index" element={< MuudaTootaja />} />
+
+      <Route path="/halda-kasutajad" element={< HaldaKasutajad />} />
+      <Route path="/login" element={< Login />} />
+      <Route path="/registeeru" element={< Registeeru />} />
+
+
 
 
       <Route path="*" element={<Notfound />} />

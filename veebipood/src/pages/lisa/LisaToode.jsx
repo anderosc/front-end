@@ -7,9 +7,14 @@ function LisaToode() {
 
     function sisesta(){
         if (nimiRef.current.value === "") {
+            
             setSonum("Tühja nimega ei saa toodet sisestada");
+            return;
         } else {
             setSonum("Toode isestatud!");
+            //push() faili
+            // VÕTMED ---> toode ={nimi : "Nobe", "hind" : 20000 , "aktiivne" : true , "pilt" : "http://....jpg"}
+            //pilt URL-st .jpg  lõpuga
         }
         
     }

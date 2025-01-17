@@ -23,7 +23,7 @@ function Hinnad() {
 //const abil loon uusi muutujaid, mille sisse panen võrdusmärgiga väärtusi
     const filtreeriSuuremKui100 = () => {
 
-        const vastus = hinnad.filter(hind => hind > 100)
+        const vastus = hinnad.filter(hind => hind.number > 100)
         setHinnad(vastus);
         // seda on vaja ---- setHinnad([245, 673, 310, 486, 531, 192]);
 }
@@ -32,11 +32,11 @@ function Hinnad() {
            
             // hinnad.sort((a,b) => b - a)
             // setHinnad(hinnad.slice())
-            const vastus = hinnad.toSorted((a,b) => a-b)
+            const vastus = hinnad.toSorted((a,b) => b.number-a.number)
             setHinnad(vastus)
         }
         const sorteeriKasvavalt = () => {
-            const vastus = hinnad.toSorted((a,b) => a-b);            
+            const vastus = hinnad.toSorted((a,b) => a.number-b.number);            
             setHinnad(vastus)
         }
         //hinna kustutamine
@@ -62,7 +62,7 @@ function Hinnad() {
         const arvutaKokku = () => {
             //kuna kivitatakse kohe, siis SET panna ei saa - hakkab loopima
             let summa = 0;
-            hinnad.forEach(hind => summa = summa + hind);
+            hinnad.forEach(hind => summa = summa + hind.number);
             return summa;
         }
         
@@ -79,10 +79,10 @@ function Hinnad() {
 
 
         <button onClick={ filtreeriSuuremKui100} >  Jäta alles suuremad kui 100</button>
-        {hinnad.map((hind, index) => 
-        <div key={hind} >
-            {hind}  
-            <Link to={"/hind/" + index}> <button>Vt lähemalt</button></Link>
+        {hinnad.map(hind => 
+        <div key={hind.number} >
+            {hind.number}  
+            <Link to={"/hind/" + hind.id}> <button>Vt lähemalt</button></Link>
             </div>)}
         <br />
         <div>Kokku: {arvutaKokku()} </div>

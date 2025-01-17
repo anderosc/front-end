@@ -10,7 +10,14 @@ function NavigationBar() {
     <img className= 'pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" />
     </Link>
 
-    
+    <Link to="/login">
+    <button className = 'nupp' > Log In </button>
+    </Link>
+
+    <Link to="/registeeru">
+    <button className = 'nupp' > Registeeru </button>
+    </Link>
+
     <button onClick={() => setCount(count +1)}> Vajuta mind {count} </button>
 
     <Link to="/Ostukorv">
@@ -77,6 +84,10 @@ function NavigationBar() {
 
     <Link to="/halda-tooted">
     <button className = 'nupp' > Halda Tooted </button>
+    </Link>
+
+    <Link to="/halda-kasutajad">
+    <button className = 'nupp' > Halda Kasutajad </button>
     </Link>
 
     <br /><br />
