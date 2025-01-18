@@ -5,7 +5,7 @@ function LisaEsindus() {
     const esindusRef = useRef();
     const telRef = useRef();
     const aadressRef = useRef();
-    const [sonum, setSonum] = useState();
+    const setSonum = useState();
 
     const lisa = () => {
         if (esindusRef.current.value === "") {
@@ -23,7 +23,8 @@ function LisaEsindus() {
         const esindus =  {
             "nimi": esindusRef.current.value, 
             "tel" : telRef.current.value, 
-            "aadress": aadressRef.current.value}
+            "aadress": aadressRef.current.value
+          }
         esindusedFailist.push(esindus);
         esindusRef.current.value = "";
         telRef.current.value = "";

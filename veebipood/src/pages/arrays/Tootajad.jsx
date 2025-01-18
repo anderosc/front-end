@@ -75,10 +75,10 @@ function Tootajad() {
       <button onClick={filtreeriAT2htTeiselKohal}> A täht teisel kohal </button>
       <button onClick={filtreeriPaarisArvT2hti}> Paarisarv tähti</button>
       
-    {nimed.map( (nimi, i) =>  
-    <div key={nimi}>
-      {nimi} 
-      <Link to={"/tootaja/" +i}>  <button>Vt lähemalt</button></Link>
+    {nimed.map( nimi =>  
+    <div key={nimi.nimi}>
+      {nimi.nimi} 
+      <Link to={"/tootaja/" + nimi.nimi}>  <button>Vt lähemalt</button></Link>
       </div>)}
 
     </div>

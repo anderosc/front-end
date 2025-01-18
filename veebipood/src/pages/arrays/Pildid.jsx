@@ -7,18 +7,18 @@ function Pildid() {
 
     const filtreeriSydamed = () => {
         //reslt
-        const vastus = pildid.filter(pilt => pilt.includes("laigitud") );
+        const vastus = pildid.filter(pilt => pilt.url.includes("laigitud") );
         setPildid(vastus);
 
         //kui loon funk sees const abil uue muutuja, siis saan
         //sedakasutada ainult siin funk sees (ing scope)
     }
     const sorteeriKasvavalt = () =>{
-        const vastus= pildid.toSorted((a ,b) => a.length -  b.length)
+        const vastus= pildid.toSorted((a ,b) => a.url.length -  b.url.length)
         setPildid(vastus)
     }
     const sorteeriKahanevalt = () =>{
-        const vastus= pildid.toSorted((a ,b) => b.length -  a.length)
+        const vastus= pildid.toSorted((a ,b) => b.url.length -  a.url.length)
         setPildid(vastus)
     }
 
@@ -34,9 +34,10 @@ function Pildid() {
         <button onClick={sorteeriKahanevalt}>Sorteeri faili nime pikkus kahavevanlt</button>
 
         <button onClick={filtreeriSydamed} > Jäta alles südamed </button>
-        {pildid.map((pilt, index) => 
-            <Link to={"/pilt/" + index} key={pilt} > 
-            <img  src={pilt} alt="" /> 
+        
+        {pildid.map(pilt => 
+            <Link to={"/pilt" + pilt.url } key={pilt.url} > 
+            <img  src={pilt.url} alt="" /> 
             </Link>
             )}
     </div>

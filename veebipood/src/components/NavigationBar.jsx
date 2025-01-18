@@ -17,8 +17,10 @@ function NavigationBar() {
     <Link to="/registeeru">
     <button className = 'nupp' > Registeeru </button>
     </Link>
+    <br />
 
-    <button onClick={() => setCount(count +1)}> Vajuta mind {count} </button>
+    <button onClick={() => setCount(count +1)}> Vajuta mind {count} </button> <br />
+
 
     <Link to="/Ostukorv">
     <button className = 'nupp' > Ostukorv </button>
@@ -104,13 +106,15 @@ function NavigationBar() {
     <button className = 'nupp' > Lisa pILT </button>
     </Link>
 
+    <Link to="/lisa-tootaja">
+    <button className = 'nupp' > Lisa Tootaja </button>
+    </Link>
+
     <Link to="/lisa-toode">
     <button className = 'nupp' > Lisa Toode </button>
     </Link>
 
-    <Link to="/lisa-tootaja">
-    <button className = 'nupp' > Lisa Tootaja </button>
-    </Link>
+
 
 
 

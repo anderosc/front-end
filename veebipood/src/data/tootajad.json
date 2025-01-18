@@ -1,1 +1,22 @@
-["Katriin", "Toomas", "Liisi", "Martin", "Anneli", "Priit", "Maarja", "Karl", "Helin", "Rasmus", "Maie", "Pauli"]
+[
+    {"nimi": "Katriin", "telefon": "5454 10 10", "amet": "Teenindaja", "toostaaz": 4, "email": "katriin@veebipoord.ee"},
+    {"nimi": "Elgar", "telefon": "5612 34 56", "amet": "Juht", "toostaaz": 2, "email": "markus@veebipoord.ee"},
+    {"nimi": "Sandra", "telefon": "5599 22 11", "amet": "Klienditeenindaja", "toostaaz": 3, "email": "sandra@veebipoord.ee"},
+    {"nimi": "Martin", "telefon": "5551 34 56", "amet": "Arendaja", "toostaaz": 5, "email": "martin@veebipoord.ee"},
+    {"nimi": "Laura", "telefon": "5689 12 34", "amet": "Raamatupidaja", "toostaaz": 7, "email": "laura@veebipoord.ee"},
+    {"nimi": "Kristjan", "telefon": "5757 12 13", "amet": "Müügijuht", "toostaaz": 6, "email": "kristjan@veebipoord.ee"},
+    {"nimi": "Kertu", "telefon": "5874 10 12", "amet": "Teenindaja", "toostaaz": 2, "email": "kertu@veebipoord.ee"},
+    {"nimi": "Evelin", "telefon": "5598 33 44", "amet": "Personalijuht", "toostaaz": 8, "email": "evelin@veebipoord.ee"},
+    {"nimi": "Jaanus", "telefon": "5444 55 66", "amet": "Tehnik", "toostaaz": 4, "email": "jaanus@veebipoord.ee"},
+    {"nimi": "Heli", "telefon": "5512 11 22", "amet": "Sekretär", "toostaaz": 3, "email": "heli@veebipoord.ee"},
+    {"nimi": "Priit", "telefon": "5600 77 88", "amet": "Juht", "toostaaz": 10, "email": "priit@veebipoord.ee"},
+    {"nimi": "Liina", "telefon": "5455 66 77", "amet": "Disainer", "toostaaz": 5, "email": "liina@veebipoord.ee"},
+    {"nimi": "Andres", "telefon": "5578 88 99", "amet": "Projektijuht", "toostaaz": 9, "email": "andres@veebipoord.ee"},
+    {"nimi": "Maarja", "telefon": "5544 11 00", "amet": "Laojuht", "toostaaz": 6, "email": "maarja@veebipoord.ee"},
+    {"nimi": "Kalev", "telefon": "5566 00 11", "amet": "Analüütik", "toostaaz": 7, "email": "kalev@veebipoord.ee"},
+    {"nimi": "Anna", "telefon": "5678 12 34", "amet": "Klienditeenindaja", "toostaaz": 3, "email": "anna@veebipoord.ee"},
+    {"nimi": "Peeter", "telefon": "5511 22 33", "amet": "Tehnik", "toostaaz": 4, "email": "peeter@veebipoord.ee"},
+    {"nimi": "Ragne", "telefon": "5432 10 10", "amet": "Juhiabi", "toostaaz": 5, "email": "ragne@veebipoord.ee"},
+    {"nimi": "Helin", "telefon": "5899 22 33", "amet": "Raamatupidaja", "toostaaz": 6, "email": "helin@veebipoord.ee"},
+    {"nimi": "Arno", "telefon": "5533 44 55", "amet": "Müügiesindaja", "toostaaz": 3, "email": "arno@veebipoord.ee"}
+]

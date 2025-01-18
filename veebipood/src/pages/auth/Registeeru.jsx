@@ -11,7 +11,7 @@ function Registeeru() {
         const kasutaja = {
             "email": emailRef.current.value,
             "parool": paroolRef.current.value,
-            "nimi:": nimiRef.current.value
+            "nimi" : nimiRef.current.value
         }; 
         kasutajadFailist.push(kasutaja)
     }
