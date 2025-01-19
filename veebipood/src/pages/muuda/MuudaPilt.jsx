@@ -5,18 +5,20 @@ import { useRef } from "react";
 function MuudaPilt() {
   const{index} = useParams();
   const leitud = pildidFailist[index];
-  const pildidRef = useRef();
+  const piltRef = useRef();
 
   const muuda = () =>{
-    pildidFailist[index] = pildidRef.current.value;
+    pildidFailist[index] = {
+      "url" : piltRef.current.value
+    }
   }
 
   return (
     <div>
         <div>
       <label htmlFor=""> Pilt:</label>
-      <div>{leitud}</div>
-      <input ref={pildidRef}  />
+      <div> <img src={leitud.url} alt="" /> </div>
+      <input ref={piltRef}  />
       <Link to="/halda-pildid"> 
       <button onClick={muuda}> Muuda </button>
       </Link>

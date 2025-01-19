@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
-import tootajadData from "../../data/tooted.json"
+import tootedData from "../../data/tooted.json"
 
 function Ykstoode() {
-  const {i} =useParams();
-  const tootaja = tootajadData[i]
+  const {nimi} =useParams();
+  const leitud = tootedData.find(toode => toode.nimi === nimi)
 
-  if(tootaja === undefined){
-    return <div> Töötajat ei leitud </div>
+  if(leitud === undefined){
+    return <div> Toodet ei leitud </div>
   }
+
   return (
     <div>
-    <div>{tootaja}</div>
+    <div>{leitud.nimi}</div>
+    <div>Hind: {leitud.hind}</div>
+    <div> <img style={{ width: '400px', height: '300px' }}  src={leitud.pilt} alt="" /></div>
+
    </div>
    )
 }

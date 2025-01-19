@@ -18,7 +18,7 @@ function YksTootaja() {
     <div>Nimi: {leitud.nimi}</div>
     <div>Telefon: {leitud.telefon}</div>
     <div>Amet: {leitud.amet}</div>
-    <div>Tööstaaz: {leitud.toostaaz} aastat</div>
+    <div>Tööstaaž: {leitud.toostaaz} aastat</div>
     <div>Email: {leitud.email}</div>
 
    </div>

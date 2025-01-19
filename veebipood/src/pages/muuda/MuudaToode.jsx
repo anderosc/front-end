@@ -5,15 +5,28 @@ import { useRef } from "react";
 function MuudaToode() {
   const{index} = useParams();
   const leitud = tootedData[index];
-  const toodeRef = useRef();
+  const nimiRef = useRef();
+  const hindRef = useRef();
+  const piltRef = useRef();
+
 
   const muuda = () =>{
-    tootedData[index] = toodeRef.current.value;
+    tootedData[index]= {
+      "nimi" : nimiRef.current.value,
+      "hind" : hindRef.current.value,
+      "pilt" : piltRef.current.value,
+      "aktiivne" : true
+    }
   }
   return (
     <div>
     <label htmlFor=""> Toode:</label>
-    <input ref={toodeRef} type="text" defaultValue={leitud} />
+    <input ref={nimiRef} type="text" defaultValue={leitud.nimi} /> <br />
+    <label htmlFor=""> Hind:</label>
+    <input ref={hindRef} type="text" defaultValue={leitud.hind} /> <br />
+    <label htmlFor=""> Pilt:</label>
+    <input ref={piltRef} type="text" defaultValue={leitud.pilt} /> <br />
+
     <Link to="/halda-tooted"> 
     <button onClick={muuda}> Muuda </button>
     </Link>

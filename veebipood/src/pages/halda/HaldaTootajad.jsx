@@ -19,7 +19,11 @@ function HaldaTootajad() {
             <thead>
                 <tr> 
                     <th> Index</th>
-                    <th> Hind</th>
+                    <th> Töötaja</th>
+                    <th> Telefon</th>
+                    <th> Amet</th>
+                    <th> Tööstaaž</th>
+                    <th> E-post</th>
                     <th> Kustuta</th>
                     <th> Muuda</th>
                 </tr>
@@ -28,9 +32,13 @@ function HaldaTootajad() {
                 
             
                 {tootajad.map((tootaja, index) => 
-                <tr key={tootaja}> 
+                <tr key={tootaja.nimi}> 
                 <td>{index}</td>
-                <td>{tootaja} </td>
+                <td>{tootaja.nimi} </td>
+                <td>{tootaja.telefon} </td>
+                <td>{tootaja.amet} </td>
+                <td>{tootaja.toostaaz} </td>
+                <td>{tootaja.email} </td>
                 <td><button onClick={() => kustutaTootaja(index)}>x</button> </td>
                 <td> <Link to={"/muuda-tootaja/" + index}>  <button>Muuda</button> </Link></td>
                 </tr>)}

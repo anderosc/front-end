@@ -46,7 +46,7 @@ const kustuta = (index) => {
          
           <tr key={pilt}> 
             <td>{index}</td>
-            <td><img  src={pilt} alt="" /> </td>
+            <td><img style={{ width: '40px', height: '30px' }}  src={pilt.url} alt="" /> </td>
             <td> <button onClick={() =>kustuta(index)}>x</button></td>
             <td> <Link to={"/muuda-pilt/" + index}> <button>Muuda</button></Link> </td>
           

@@ -78,7 +78,7 @@ function App() {
 {/* Yks peale sattumiseks ei pane teda navbari /menüüsse, tema peale satun nt avaleleht või toote lehelt: .map() seest */}
       <Route path="/hind/:i" element={< YksHind />} />
       <Route path="/pilt/:leht" element={< YksPilt />} />
-      <Route path="/toode/:i" element={< Ykstoode />} />
+      <Route path="/toode/:nimi" element={< Ykstoode />} />
       <Route path="/esindus/:nimi" element={< YksEsndus />} />
       <Route path="/tootaja/:nimi" element={< YksTootaja />} />
 

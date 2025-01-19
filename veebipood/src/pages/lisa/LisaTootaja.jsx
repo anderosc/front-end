@@ -7,7 +7,7 @@ function LisaTootaja() {
     const nimiRef = useRef();
     const telefonRef = useRef();
     const ametRef = useRef();
-    const setSonum = useState();
+    const [sonum, setSonum] = useState();
 
 
     const lisa = () => {
@@ -40,6 +40,7 @@ function LisaTootaja() {
 
     return (
         <div>
+            <div>{sonum}</div>
             <label>Töötaja nimi:</label> <br />
             <input ref={nimiRef} type="text" /> <br />
             <label>Töötaja telefon:</label> <br />

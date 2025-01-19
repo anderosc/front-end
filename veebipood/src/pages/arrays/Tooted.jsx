@@ -1,67 +1,64 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import tootedFailist from "../../data/tooted.json"
 
 function Tooted() {
 
-  const [tooted, setTooted] = useState (["Nobe", "BMW", "Tesla", "Toyota", "Nissan", "Bently", "Audi", "Mercedes"]);
+  const [tooted, setTooted] = useState (tootedFailist);
 
-    //Nobe, BMW, tesla, Toyota, Nissan, Bently, Audi, Mercedes
-
-  // kellel on 2 täht "e"
-  // paarisarv tähti sisaldavad
 
     const sorteeriAZ = () => {
-      const vastus = tooted.toSorted((a, b) => a.localeCompare(b))
+      const vastus = tooted.toSorted((a, b) => a.nimi.localeCompare(b.nimi))
       setTooted(vastus)
     }
     const sorteeriZA = () => {
-      const vastus = tooted.toSorted((a, b) => b.localeCompare(a))
+      const vastus = tooted.toSorted((a, b) => b.nimi.localeCompare(a.nimi))
       setTooted(vastus)
     }
     const sorteeriTahtedeArvKasvavalt = () => {
-      const vastus = tooted.toSorted((a ,b) => a.length - b.length)
+      const vastus = tooted.toSorted((a ,b) => a.nimi.length - b.nimi.length)
       setTooted(vastus);
     }
     const sorteeriTahtedeArvKahanevalt = ()  => {
-      const vastus = tooted.toSorted((a,b) => b.length - a.length)
+      const vastus = tooted.toSorted((a,b) => b.nimi.length - a.nimi.length)
       setTooted(vastus)
     }
     const sorteeriTeineTaht = () => {
-      const vastus = tooted.toSorted((a ,b) => a.localeCompare(b[1]))
+      const vastus = tooted.toSorted((a ,b) => a.nimi.localeCompare(b.nimi[1]))
       setTooted(vastus);
     }
     //filtreerimine
 
     const filtreeriNgaAlgavad = () =>{
-      const vastus = tooted.filter(toode =>toode.startsWith("N"))
+      const vastus = tooted.filter(toode =>toode.nimi.startsWith("N"))
       setTooted(vastus)
     }
     const filtreeriBgaAlgavad = () =>{
-      const vastus = tooted.filter(toode =>toode.startsWith("B"))
+      const vastus = tooted.filter(toode =>toode.nimi.startsWith("B"))
       setTooted(vastus)
     }
     const filtreeriTgaAlgavad = () =>{
-      const vastus = tooted.filter(toode =>toode.startsWith("T"))
+      const vastus = tooted.filter(toode =>toode.nimi.startsWith("T"))
       setTooted(vastus)
     }
     const nulli = () => {
       setTooted(tooted)
     }
     const filtreeriKuniNeljaT2helised = () =>{
-      const vastus = tooted.filter(toode =>toode.length <= 4)
+      const vastus = tooted.filter(toode =>toode.nimi.length <= 4)
       setTooted(vastus)
     }
     const filtreeriKuueT2helised = () =>{
-      const vastus = tooted.filter(toode =>toode.length === 6)
+      const vastus = tooted.filter(toode =>toode.nimi.length === 6)
       setTooted(vastus)
     }
     const filtreeriEsLyhenditSisaldavad = () =>{
-      const vastus = tooted.filter(toode =>toode.includes("es"))
+      const vastus = tooted.filter(toode =>toode.nimi.includes("es"))
       setTooted(vastus)
     }
 
     const filtreeriPaarisArvT2hed = () =>{
-      const vastus = tooted.filter(toode =>toode.length % 2 === 0)
+      const vastus = tooted.filter(toode =>toode.nimi.length % 2 === 0)
       setTooted(vastus)
     }
 
@@ -92,10 +89,10 @@ function Tooted() {
  
 
       <br />
-      {tooted.map((toode, index) => 
-        <div key={toode} >
-            {toode}  
-            <Link to={"/toode/" + index}> <button>Vt lähemalt</button></Link>
+      {tooted.map(toode => 
+        <div key={toode.nimi} >
+            {toode.nimi}  
+            <Link to={"/toode/" + toode.nimi}> <button>Vt lähemalt</button></Link>
             </div>)}      
 
 
