@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import tootedFailist from "../../data/tooted.json"
+// import ostukorvFailist from "../../data/ostukorv.json"
+
 
 function Tooted() {
 
@@ -61,8 +63,18 @@ function Tooted() {
       const vastus = tooted.filter(toode =>toode.nimi.length % 2 === 0)
       setTooted(vastus)
     }
-
-
+    const lisaOstukorvi = (lisatavToode) => {
+      // import ostukorvFailist from "../../data/ostukorv.json"
+      const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
+      ostukorvLS.push(lisatavToode);
+      localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
+      //Array local storage lisamiseks:
+      //1. võtma local storagest vana seis
+      //2. Võtma localstoragest saadud väärtustelt jutumärgid maha --> JSON.parse()
+      //3. pushima local storagesse juurde -> .push()
+      //4. Lisama jutmärgid juurde --> JSON.stringify()
+      //5. lisama uuenenud ostukorvi local storagesse --> localStorage.setItem()
+    }
 
 
   return (
@@ -86,16 +98,14 @@ function Tooted() {
       <button onClick={filtreeriEsLyhenditSisaldavad}> es Lühendit sisaldavad </button>
       <button onClick={filtreeriPaarisArvT2hed}> Paarisarv tähti </button>
 
- 
-
       <br />
       {tooted.map(toode => 
         <div key={toode.nimi} >
-            {toode.nimi}  
-            <Link to={"/toode/" + toode.nimi}> <button>Vt lähemalt</button></Link>
-            </div>)}      
-
-
+        <div> {toode.nimi}  </div>
+        <div>{toode.hind} $ </div>
+        <Link to={"/toode/" + toode.nimi}> <button>Vt lähemalt</button></Link>
+        <button onClick={() => lisaOstukorvi(toode)}> Lisa ostukorvi</button>
+        </div>)}      
     </div>
   )
 }

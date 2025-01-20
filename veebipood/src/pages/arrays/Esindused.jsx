@@ -70,6 +70,16 @@ function Esindused() {
 
         {linn === "Pärnu" && <div> Port Artur 2</div>}
         {linn === "Narva" && <div> Fama</div>}
+        
+        {linn === "Tartu" && 
+            <>
+                <div>Raatuse</div>
+                <div>Lõunakeskus</div>
+            </>}
+
+        {linn === "Narva" && <div>Fama</div>}
+
+        {linn === "Pärnu" && <div>Port Artur 2</div>}
         {linn === "Tallinn" && <div> 
           <div> Keskuste arv kokku: {keskused.length} </div>
           <button onClick={sorteeriAZ} > Sorteeri A-Z</button>

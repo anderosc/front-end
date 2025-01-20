@@ -36,7 +36,24 @@ function LisaTootaja() {
         nimiRef.current.value = "";
         telefonRef.current.value = "";
         ametRef.current.value = "";
+
     };
+
+    const kontrolli = () =>{
+        if(telefonRef.current.value.startsWith("5") === false){
+            setSonum("Tel. number peab algama 5ga");
+            return;
+        }
+        if(telefonRef.current.value.length < 7){
+            setSonum("Tel. number on liiga lühike");
+            return;
+        }
+        if(telefonRef.current.value.length < 8){
+            setSonum("Tel. number on liiga pikk");
+            return;
+        }
+        setSonum("");
+    }
 
     return (
         <div>
@@ -44,10 +61,11 @@ function LisaTootaja() {
             <label>Töötaja nimi:</label> <br />
             <input ref={nimiRef} type="text" /> <br />
             <label>Töötaja telefon:</label> <br />
-            <input ref={telefonRef} type="text" /> <br />
+            <input onChange={kontrolli} ref={telefonRef} type="text" /> <br />
             <label>Töötaja amet:</label> <br />
             <input ref={ametRef} type="text" /> <br />
             <button onClick={ lisa}>Lisa</button> <br />
+
         </div>
     );
 }

@@ -36,16 +36,27 @@ import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import HaldaKasutajad from './pages/auth/HaldaKasutajad';
 import Login from './pages/auth/Login';
 import Registeeru from './pages/auth/Registeeru';
+import { useState } from 'react';
 
 
 
 
 function App() {
- 
+  const [dark, setDark] = useState(localStorage.getItem("dark") || "light");
 
+  const darkMode = () =>{
+    setDark("true");
+    localStorage.setItem("dark", "true");
+  }
+  const lightMode = () =>{
+    setDark("false");
+    localStorage.setItem("dark", "false");
+
+  }
   return (
-    <>
-
+    <div className={dark === "true" ? "dark" : "light"}>
+      <button onClick={darkMode}> Dark</button>
+      <button onClick={lightMode}> Light</button>
     <NavigationBar />
   
     <Routes>
@@ -101,7 +112,7 @@ function App() {
 
 
     </Routes>
-    </>
+    </div>
 
   )
 }
