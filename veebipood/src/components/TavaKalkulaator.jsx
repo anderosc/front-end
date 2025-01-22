@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
 function Tavakalkulaator() {
     const[number, setNumber] = useState(0);

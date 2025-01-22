@@ -31,12 +31,12 @@ function NavigationBar() {
     </Link>
 
     <Link to="/Seaded">
-    <button className = 'nupp' > Seade </button>
+    <button className = 'nupp' > Seaded </button>
     </Link>
 
 
     <Link to="/lisa-toode">
-    <button className = 'nupp' > Lisatoode </button>
+    <button className = 'nupp' > Lisa toode </button>
     </Link>
 
     <Link to="/kalkulaator">
@@ -59,7 +59,7 @@ function NavigationBar() {
     </Link>
 
     <Link to="/tootajad">
-    <button className = 'nupp' > Tootajad </button>
+    <button className = 'nupp' > Töötajad </button>
     </Link>
 
     <Link to="/tooted">
@@ -81,7 +81,7 @@ function NavigationBar() {
     </Link>
 
     <Link to="/halda-tootajad">
-    <button className = 'nupp' > Hald Tootajad </button>
+    <button className = 'nupp' > Hald Töötajad </button>
     </Link>
 
     <Link to="/halda-tooted">
@@ -103,11 +103,11 @@ function NavigationBar() {
     </Link>
 
     <Link to="/lisa-pilt">
-    <button className = 'nupp' > Lisa pILT </button>
+    <button className = 'nupp' > Lisa pilt </button>
     </Link>
 
     <Link to="/lisa-tootaja">
-    <button className = 'nupp' > Lisa Tootaja </button>
+    <button className = 'nupp' > Lisa Töötaja </button>
     </Link>
 
     <Link to="/lisa-toode">

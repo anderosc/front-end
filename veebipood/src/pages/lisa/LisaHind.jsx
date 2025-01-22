@@ -4,6 +4,7 @@ import hinnadFailist from '../../data/hinnad.json'
 
 function LisaHind() {
     const hindRef = useRef()
+    
     const lisa = () => {
         hinnadFailist.push({
           "id" : hinnadFailist.length+1,
