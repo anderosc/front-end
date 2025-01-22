@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react'
+import { toast } from 'react-toastify';
+
 
 function Avaleht() {
   const [sisselogitud, muudaSisselogitud] = useState("ei")
@@ -11,8 +13,9 @@ const kasutajaNimiRef = useRef();
     const logiSisse = () => {
       if(paroolRef.current.value === "123"){
         muudaSisselogitud("jah")
-        muudaSonum("Tere tulemast, " + kasutajaNimiRef.current.value)
-      } else {
+        muudaSonum("Tere tulemast, " + kasutajaNimiRef.current.value);
+        toast.success("Oled sisse logitud")
+        } else {
         muudaSonum("Vale parool")
       }
     }
