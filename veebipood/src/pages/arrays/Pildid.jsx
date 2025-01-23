@@ -36,7 +36,7 @@ function Pildid() {
         <button onClick={filtreeriSydamed} > Jäta alles südamed </button>
         
         {pildid.map(pilt => 
-            <Link to={"/pilt" + pilt.url } key={pilt.url} > 
+            <Link to={"/pilt/" + pilt.id } key={pilt.url} > 
             <img  src={pilt.url} alt="" /> 
             </Link>
             )}

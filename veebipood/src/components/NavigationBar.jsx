@@ -6,6 +6,11 @@ function NavigationBar() {
     const [count, setCount] = useState(0)  //algväärtus
   return (
     <div>
+
+    <Link to="/apihome">
+    <button className = 'nupp' > API Home </button>
+    </Link>
+
           <Link to="/ostukorv" >
     <img className= 'pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" />
     </Link>

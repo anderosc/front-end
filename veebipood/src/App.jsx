@@ -37,6 +37,18 @@ import HaldaKasutajad from './pages/auth/HaldaKasutajad';
 import Login from './pages/auth/Login';
 import Registeeru from './pages/auth/Registeeru';
 import { useState } from 'react';
+import Tarnija1 from './pages/api/Tarnija1';
+import Tarnija2 from './pages/api/Tarnija2';
+import Tarnija3 from './pages/api/Tarnija3';
+import Books from './pages/api/Books';
+import Books2 from './pages/api/Books2';
+import Cars from './pages/api/Cars';
+import Countries from './pages/api/Countries';
+import Countries2 from './pages/api/Countries2';
+import Electricity from './pages/api/Electricity';
+import Floods from './pages/api/Floods';
+import ApiHome from './pages/api/ApiHome';
+import Vocabulary from './pages/api/Vocabulary';
 
 
 
@@ -102,6 +114,19 @@ function App() {
       <Route path="/halda-kasutajad" element={< HaldaKasutajad />} />
       <Route path="/login" element={< Login />} />
       <Route path="/registeeru" element={< Registeeru />} />
+
+      <Route path="/tarnija-1" element={< Tarnija1 />} />
+      <Route path="/tarnija-2" element={< Tarnija2 />} />
+      <Route path="/tarnija-3" element={< Tarnija3 />} />
+      <Route path="/books" element={< Books />} />
+      <Route path="/books-2" element={< Books2 />} />
+      <Route path="/cars" element={< Cars />} />
+      <Route path="/countries" element={< Countries />} />
+      <Route path="/countries-2" element={< Countries2 />} />
+      <Route path="/electricity" element={< Electricity />} />
+      <Route path="/floods" element={< Floods />} />
+      <Route path="/apihome" element={< ApiHome />} />
+      <Route path="/vocabulry" element={< Vocabulary />} />
 
 
 

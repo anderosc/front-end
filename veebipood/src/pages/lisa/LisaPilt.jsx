@@ -32,6 +32,7 @@ function LisaPilt() {
           return;
           }
       PildidJSON.push({
+        "id" : PildidJSON.length + 1,
         "url" : urlRef.current.value,
         "pealkiri" : pealkiriRef.current.value, 
         "sisu" : sisuRef.current.value 

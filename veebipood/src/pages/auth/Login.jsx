@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import kasutajadFailist from "../../data/kasutajad.json"
+//import kasutajadFailist from "../../data/kasutajad.json"
 import {useNavigate} from "react-router-dom"
 
 function Login() {
@@ -8,10 +8,12 @@ function Login() {
     const paroolRef = useRef();
     const [sonum, setSonum] = useState();
     const navigate = useNavigate();
+    const kasutajad = JSON.parse(localStorage.getItem("kasutajad")) || [];
+ 
 
     const login = () =>{ // find otsib mingi omaduse järgi terve objekti üles. Filter jätab alles array kellel kõigil on true
         // jätab alles ühe kellel on true
-        const leitud = kasutajadFailist.find(kasutaja => kasutaja.email === emailRef.current.value);
+        const leitud = kasutajad.find(kasutaja => kasutaja.email === emailRef.current.value);
         if (leitud === undefined){
             setSonum("Sellise emailiga kasutajat ei leitud");
             return; //lõpetab funktsiooni

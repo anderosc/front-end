@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import kasutajadFailist from "../../data/kasutajad.json"
+//import kasutajadFailist from "../../data/kasutajad.json"
 
 
 function Registeeru() {
@@ -13,7 +13,10 @@ function Registeeru() {
             "parool": paroolRef.current.value,
             "nimi" : nimiRef.current.value
         }; 
-        kasutajadFailist.push(kasutaja)
+        // kasutajadFailist.push(kasutaja)
+        const kasutajadLS = JSON.parse(localStorage.getItem("kasutajad")) || [];
+        kasutajadLS.push(kasutaja);
+        localStorage.setItem("kasutajad", JSON.stringify(kasutajadLS));
     }
 
   return (

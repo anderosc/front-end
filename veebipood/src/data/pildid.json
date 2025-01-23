@@ -1,16 +1,19 @@
 [
     {
+        "id" : 1,
         "url" : "/laigitud.svg",
         "pealkiri" : "laigitud",
         "sisu" : "Laigitud pilt"
     },
     {
+        "id" : 2,
         "url" : "/mitte-laigitud.svg",
         "pealkiri" : "Mitte laigitud",
         "sisu" : "Ei ole laigitud"
 
     },
     {
+        "id" : 3,
         "url" : "/vite.svg",
         "pealkiri" : "Vite",
         "sisu" : "Vite pilt"

@@ -3,7 +3,7 @@ import pildidFailist from "../../data/pildid.json"
 
 function YksPilt() {
   const {leht} = useParams();
-  const leitud = pildidFailist.find(pilt => pilt.url === leht);
+  const leitud = pildidFailist.find(pilt => pilt.id === Number(leht));
   
   if (leitud === undefined){
     return <div> Pilti ei leitud</div>

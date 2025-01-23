@@ -59,3 +59,7 @@ text-decoration: underline;
   background-color: white;
   color: black;
 }
+
+th, td{
+  border: 1px, solid black;
+}

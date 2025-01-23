@@ -1,7 +1,7 @@
-import kasutajadFailist from "../../data/kasutajad.json"
+//import kasutajadFailist from "../../data/kasutajad.json"
 
 function HaldaKasutajad() {
-  const kasutajad = kasutajadFailist;
+  const kasutajad = JSON.parse(localStorage.getItem("kasutajad")) || [];
 
   return (
     <div>
