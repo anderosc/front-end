@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import {  useState } from 'react'
 import Tavakalkulaator from '../components/Tavakalkulaator'
 import LaenuKalkulaator from '../components/LaenuKalkulaator'
 import MaksimaalneKalkulaator from '../components/MaksimaalneKalkulaator'

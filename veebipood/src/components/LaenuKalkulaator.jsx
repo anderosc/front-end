@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import  { useRef, useState } from 'react'
 
 function LaenuKalkulaator() {
     const [laenusumma, setLaenusumma] = useState(75000); //USE state et panna htmlis mingi koht muutuma
