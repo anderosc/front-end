@@ -13,6 +13,7 @@ function CompAddition() {
     const [gameStatus, setGameStatus] = useState(false);
     const [points, setPoints] = useState(0)
     const [level, setLevel] = useState(1);
+    const [correctCount, setCorrectCount] = useState(0) 
     const [showGif, setShowGif] = useState(false);
 
 
@@ -38,7 +39,7 @@ function CompAddition() {
     useEffect(() => {
         if (gameStatus && seconds > 0) {
             const timer = setTimeout(() => setSeconds(seconds - 1), 1000);
-            return () => clearTimeout(timer); // Cleanup timeout to avoid memory leaks
+            return () => clearTimeout(timer); 
         } else if ( seconds <= 0) {
             setGameStatus(false);
             setSeconds(40);
@@ -56,14 +57,24 @@ function CompAddition() {
     }, [seconds, gameStatus]);
     
     
-    
-    
+    const [min, setMin] = useState(0);
+    const [max, setMax] = useState(10);
+
+    useEffect(() => {
+        if(level === 1){
+            setMin(0);
+            setMax(10)
+        }else if(level === 2){
+            setMin(10);
+            setMax(20);
+        }
+      }, [level]);
     
 
 
     function randomNumberGenerator(){
-        let min = 0
-        let max = 10
+
+        
 
         const number1 = Math.round(Math.random()* (max - min) + min);
         const number2 = Math.round(Math.random()* (max - min) + min);
@@ -78,27 +89,32 @@ function CompAddition() {
         if(gameStatus === false){
             return;
         }
+
         const checkedanswer = calculateAnswer()
+
         if(answer == checkedanswer ){
+            setCorrectCount(correctCount + 1)
             setAnswer("");
-            randomNumberGenerator();
             setPoints(points+1)
             setSeconds(seconds + 3);
+            randomNumberGenerator();
+
+            
         } else{
             setAnswer("");
-            setShowGif(true); // Show the GIF when the answer is wrong
+            setShowGif(true);
+
             setTimeout(() => { setShowGif(false);
             randomNumberGenerator();
             setOperation("+")
-            }, 4500); // Hide the GIF after 2 seconds
+            }, 4500);
+            // meanwhile --> 
             setRandomNumber();
             setRandomNumber2();
             setOperation("");
             
         }
     }
-
-
 
     function calculateAnswer(){
         let answercheck;
@@ -107,6 +123,13 @@ function CompAddition() {
         }
         return answercheck;
     }
+
+    useEffect(() => {
+        if(correctCount === 3){
+            setLevel(level + 1);
+            setCorrectCount(0)
+        }
+      }, [correctCount]);
 
   return (
     <div> 
