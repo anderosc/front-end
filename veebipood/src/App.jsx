@@ -49,6 +49,9 @@ import Electricity from './pages/api/Electricity';
 import Floods from './pages/api/Floods';
 import ApiHome from './pages/api/ApiHome';
 import Vocabulary from './pages/api/Vocabulary';
+import AdminHome from './pages/yks/AdminHome';
+import ArraysHome from './pages/arrays/ArraysHome';
+import { ContactUs } from './pages/ContactUs';
 
 
 
@@ -56,19 +59,19 @@ import Vocabulary from './pages/api/Vocabulary';
 function App() {
   const [dark, setDark] = useState(localStorage.getItem("dark") || "light");
 
-  const darkMode = () =>{
-    setDark("true");
-    localStorage.setItem("dark", "true");
-  }
-  const lightMode = () =>{
-    setDark("false");
-    localStorage.setItem("dark", "false");
+  // const darkMode = () =>{
+  //   setDark("true");
+  //   localStorage.setItem("dark", "true");
+  // }
+  // const lightMode = () =>{
+  //   setDark("false");
+  //   localStorage.setItem("dark", "false");
 
-  }
+  // }
   return (
     <div className={dark === "true" ? "dark" : "light"}>
-      <button onClick={darkMode}> Dark</button>
-      <button onClick={lightMode}> Light</button>
+      {/* <button onClick={darkMode}> Dark</button>
+      <button onClick={lightMode}> Light</button> */}
     <NavigationBar />
   
     <Routes>
@@ -127,6 +130,12 @@ function App() {
       <Route path="/floods" element={< Floods />} />
       <Route path="/apihome" element={< ApiHome />} />
       <Route path="/vocabulry" element={< Vocabulary />} />
+
+      <Route path="/admin" element={< AdminHome />} />
+      <Route path="/arrays" element={< ArraysHome />} />
+
+
+      <Route path="/contact" element={< ContactUs />} />
 
 
 

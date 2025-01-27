@@ -1,0 +1,10 @@
+{
+    "currently-active-city": "Currently active city",
+    "total-number-of-shops" : "Keskuste arv kokku",
+    "no-shops" : "Esindusi ei leitud",
+    "plural" : "s",
+    "nav" : {
+      "signup" : "Signup",
+      "cart" : "Cart"
+    }
+  }

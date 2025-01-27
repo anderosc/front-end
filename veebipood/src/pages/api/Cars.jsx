@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 function Cars() {
+
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
+
     fetch('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/all-vehicles-model/records?limit=100')  
-      .then((response) => response.json())
-      .then((data) => setCars(data.results))
-      .catch((error) => console.error('Error fetching data:', error));
+       .then((response) => response.json())
+      .then((data) => setCars(data.results))    
   }, []);
+
 
   return (
     <div>

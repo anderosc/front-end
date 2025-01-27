@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import esindusedFailist from '../../data/esindused.json';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 
 // === vasak ja parem identsed
@@ -15,6 +17,8 @@ import { Link } from 'react-router-dom';
 //Kui andmeid palju >10-15
 
 function Esindused() {
+  const { t} = useTranslation();
+
     //    muutuja, muutja
     const [linn, setLinn] = useState("Tallinn");
     const[keskused, setKeskused] = useState(esindusedFailist);
@@ -62,7 +66,7 @@ function Esindused() {
         <button className={linn === "Pärnu" ? 'linn-aktiivne': undefined}  onClick={() => setLinn("Pärnu")}>Pärnu</button>
 
         <br /><br />
-        <div>Hetkel aktiivne linn: {linn}</div>
+        <div>{t('currently-active-city')}: {linn}</div>
 
         <br /><b></b>
 
@@ -81,7 +85,8 @@ function Esindused() {
 
         {linn === "Pärnu" && <div>Port Artur 2</div>}
         {linn === "Tallinn" && <div> 
-          <div> Keskuste arv kokku: {keskused.length} </div>
+          {/* {keskused.length === 0 && <div> {t('no-shops')} </div>} */}
+          <div> {t('total-number-of-shops')}: {keskused.length} </div>
           <button onClick={sorteeriAZ} > Sorteeri A-Z</button>
           <button onClick={sorteeriZA}>Sorteeri Z-A </button>
           <button onClick={sorteeriKolmasTahtAZ}>Sorteeri Kolmas Täht </button>

@@ -1,0 +1,10 @@
+{
+    "currently-active-city": "Hetkel aktiivne linn",
+    "total-number-of-shops" : "Total number of shops:",
+    "no-shops" : "Shops not found",
+    "plural" : "d",
+    "nav" : {
+      "signup" : "Registeeru",
+      "cart" : "Ostukorv"
+    }
+  }
