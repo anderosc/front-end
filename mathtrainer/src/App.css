@@ -17,4 +17,7 @@
     font-size: 23px;
     border-radius: 5px;
 }
+th, td{
+    border: 1px, solid black;
+  }
 

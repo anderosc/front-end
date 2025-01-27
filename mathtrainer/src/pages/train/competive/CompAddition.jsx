@@ -15,24 +15,32 @@ function CompAddition() {
     const [level, setLevel] = useState(1);
     const [correctCount, setCorrectCount] = useState(0) 
     const [showGif, setShowGif] = useState(false);
+    const [showRecordGif, setShowRecordGif] = useState(false);
+
+    let wonAudio = new Audio("/audio/correct.wav");
+    let wrongAudio = new Audio("/audio/incorrect.wav");
 
 
     const [prevGameStatus, setPrevGameStatus] = useState(false);
 
 
-
-
     
     function startGame(){
-        setPoints(0)
-        setGameStatus(true)
-        setOperation("+")
+        setMin(0);
+        setMax(10)
+        setPoints(0);
+        setLevel(1);
+        setGameStatus(true);
+        setOperation("+");
         updateCountDown();
-        randomNumberGenerator()
+        randomNumberGenerator();
+
+
     }
 
     function updateCountDown(){
         setGameStatus(true);
+
     }
 
 
@@ -51,6 +59,32 @@ function CompAddition() {
             let i = Math.round(Math.random() * 100); 
             console.log(i);
             toast.success(congratsData[i]);
+
+            localStorage.setItem("AdditionPoints", JSON.stringify(points));
+
+            let additionTop = JSON.parse(localStorage.getItem("AdditionTop")) || [];
+            const highestScore = Math.max(...additionTop);
+
+
+            if(additionTop.length === 0){
+                additionTop = []
+            }
+            additionTop.push(points);
+            const newArraySorted = additionTop.toSorted((a,b) => b - a).slice(0, 10);
+            localStorage.setItem("AdditionTop", JSON.stringify(newArraySorted));
+
+            console.log("Highest score:", highestScore);
+            console.log("Current points:", points);
+            if(points > highestScore){
+                setShowRecordGif(true);
+                console.log("Highest score:", highestScore);
+                console.log("Current points:", points);
+                setTimeout(() => { setShowRecordGif(false);
+                    }, 4000);
+            }
+
+
+
         }
         setPrevGameStatus(gameStatus);
 
@@ -74,13 +108,10 @@ function CompAddition() {
 
     function randomNumberGenerator(){
 
-        
-
         const number1 = Math.round(Math.random()* (max - min) + min);
         const number2 = Math.round(Math.random()* (max - min) + min);
-        setRandomNumber(number1)
-        setRandomNumber2(number2)
-        
+        setRandomNumber(number1);
+        setRandomNumber2(number2);
         return;
     }
 
@@ -98,6 +129,7 @@ function CompAddition() {
             setPoints(points+1)
             setSeconds(seconds + 3);
             randomNumberGenerator();
+            wonAudio.play();
 
             
         } else{
@@ -107,11 +139,12 @@ function CompAddition() {
             setTimeout(() => { setShowGif(false);
             randomNumberGenerator();
             setOperation("+")
-            }, 4500);
+            }, 2500);
             // meanwhile --> 
             setRandomNumber();
             setRandomNumber2();
             setOperation("");
+            wrongAudio.play();
             
         }
     }
@@ -131,6 +164,9 @@ function CompAddition() {
         }
       }, [correctCount]);
 
+
+      
+
   return (
     <div> 
         <div>
@@ -144,11 +180,17 @@ function CompAddition() {
         <br />
         <label className= "answer">{answer}</label>
 
-        {showGif && (
+    {showGif && (
     <div className="gif-popup">
-        <img src="/gif/wrongans.gif"  />
+    <img src="/gif/wrongans.gif"  />
     </div>
-)}
+    )}
+
+    {showRecordGif && (
+    <div className="gif2-popup" >
+    <img src="/gif/celebrate.gif"  />
+    </div>
+    )}
 
         <br />
         <div >

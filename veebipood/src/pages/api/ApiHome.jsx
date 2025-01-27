@@ -31,7 +31,7 @@ function ApiHome() {
     <button className = 'nupp' > Countries </button>
     </Link>
 
-    <Link to="/Countries2">
+    <Link to="/countries-2">
     <button className = 'nupp' > Countries2 </button>
     </Link>
 
