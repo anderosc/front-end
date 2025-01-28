@@ -63,3 +63,8 @@ text-decoration: underline;
 th, td{
   border: 1px, solid black;
 }
+
+.bg-body-tertiary{
+
+  background-color: #1a1a1a;
+}
