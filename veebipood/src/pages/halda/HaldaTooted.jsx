@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 function HaldaTooted() {
     const [tooted, setTooted] = useState(tootedFailist);
-    console.log(tooted);
 
     const kustutaToode = (index) => {
         tootedFailist.splice(index, 1);

@@ -12,7 +12,7 @@ function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-      <Navbar.Brand as={Link} to="/"  > <img className= 'pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" /></Navbar.Brand>
+      <Navbar.Brand as={Link} to=""  > <img className= 'pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" /></Navbar.Brand>
 
         <Navbar.Brand as={Link} to="/">yo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

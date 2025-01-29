@@ -25,23 +25,23 @@ function App() {
       <NavigationBar /> 
 
       <Routes>
-        <Route to="" element={ <HomePage/>} />
-        <Route to="/contact" element={ <ContactUs/>} />
-        <Route to="/shops" element={ <Shops/>} />
-        <Route to="/cart" element={ <Cart/>} />
-        <Route to="/product/:index" element={ <SingleProduct/>} />
+        <Route path="" element={ <HomePage/>} />
+        <Route path="/contact" element={ <ContactUs/>} />
+        <Route path="/shops" element={ <Shops/>} />
+        <Route path="/cart" element={ <Cart/>} />
+        <Route path="/product/:index" element={ <SingleProduct/>} />
 
-        <Route to="/admin" element={ <AdminHome/>} />
-        <Route to="/admin/add-product" element={ <AddProduct/>} />
-        <Route to="/admin/edit-product/:index" element={ <EditProduct/>} />
-        <Route to="/admin/maintain-product/" element={ <MaintainProducts/>} />
-        <Route to="/admin/maintain-categories" element={ <MaintainCategories/>} />
-        <Route to="/admin/maintain-shops" element={ <MaintainShops/>} />
+        <Route path="/admin" element={ <AdminHome/>} />
+        <Route path="/admin/add-product" element={ <AddProduct/>} />
+        <Route path="/admin/edit-product/:index" element={ <EditProduct/>} />
+        <Route path="/admin/maintain-product/" element={ <MaintainProducts/>} />
+        <Route path="/admin/maintain-categories" element={ <MaintainCategories/>} />
+        <Route path="/admin/maintain-shops" element={ <MaintainShops/>} />
 
-        <Route to="/login" element={ <Login/>} />
-        <Route to="/signup" element={ <Signup/>} />
+        <Route path="/login" element={ <Login/>} />
+        <Route path="/signup" element={ <Signup/>} />
 
-        <Route to="/*" element={ <NotFound/>} />
+        <Route path="/*" element={ <NotFound/>} />
 
 
       </Routes>
