@@ -22,6 +22,7 @@ function NavigationBar() {
 
             <NavDropdown title="Admin" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin">Admin</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/admin/add-product">Add Product</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-product/">Maintain products</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-categories">Maintain categories</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-shops">Maintain shops</NavDropdown.Item>
@@ -33,8 +34,8 @@ function NavigationBar() {
 
           
           <Nav>
-          <Nav.Link as={Link} to="/home">Login  </Nav.Link> 
-          <Nav.Link as={Link} to="/home">Sign Up</Nav.Link>
+          <Nav.Link as={Link} to="/login">Login  </Nav.Link> 
+          <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
           </Nav>
 
         </Navbar.Collapse>
