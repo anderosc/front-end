@@ -2,6 +2,7 @@ import { toast, ToastContainer } from "react-toastify";
 import productsFile from "../../data/products.json"
 import { useRef, useState } from "react"
 import styles from "../../css/MaintainProducts.module.css"
+import { Link } from "react-router-dom";
 
 
 function MaintainProducts() {
@@ -45,10 +46,11 @@ function MaintainProducts() {
                   <th>Rating Rate</th>
                   <th>Raiting Count</th>
                   <th> </th>
+                  <th> </th>
               </tr>
           </thead>
           <tbody>
-              {products.map(product => (
+              {products.map((product, index) => (
               <tr key={product.id} className={product.active ? styles.active : styles.inactive}>
                 <td>{product.title}</td>
                 <td>{product.price}</td>
@@ -58,6 +60,8 @@ function MaintainProducts() {
                 <td>{product.rating.rate}</td>
                 <td>{product.rating.count}</td>
                 <td><button onClick={() => deleteProduct(product.id)}>DELETE</button></td>
+                <td> <Link to={"/admin/edit-product/" + index}>  <button>CHANGE </button> </Link></td>
+
               </tr>
               ))}
           </tbody>

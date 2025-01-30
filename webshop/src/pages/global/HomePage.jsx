@@ -4,75 +4,67 @@ import productsFromFile from "../../data/products.json"
 import { ToastContainer, toast } from 'react-toastify';
 import CarouselGallery from "../../components/CarouselGallery";
 import styles from "../../css/Homepage.module.css"
-
+import { useTranslation } from 'react-i18next';
 
 function HomePage() {
+  const { t } = useTranslation();
   const [products, setProducts] = useState(productsFromFile);
 
   const addToCart = (product) =>{
       const cartLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
       cartLocalStorage.push(product);
       localStorage.setItem("cart", JSON.stringify(cartLocalStorage));
-      toast("Product added to cart!");
-  }
-  const sortAZ = () => {
-    const sorted = products.toSorted((a, b) => a.title.localeCompare(b.title));
-      setProducts(sorted);
-  }
-  const sortZA = () => {
-    const sorted = products.toSorted((a, b) => b.title.localeCompare(a.title));
-    setProducts(sorted);
-  }
-  const sortPriceHighToLow = () => {
-    const sorted = products.toSorted((a,b) => b.price-a.price);
-    setProducts(sorted);
-  }
-  const sortPriceLowToHigh = () => {
-    const sorted = products.toSorted((a,b) => a.price-b.price);
-    setProducts(sorted);
-  }
-  const sortRatingHTL = () => {
-    const sorted = products.toSorted((a,b) => b.rating.rate - a.rating.rate);
-    setProducts(sorted);
-  }
-  const sortRatingLTH = () => {
-    const sorted = products.toSorted((a,b) => a.rating.rate - b.rating.rate);
-    setProducts(sorted);
-  }
-  const filterElectronics = () =>{
-    const filter = products.filter(product => product.category.includes("electronics"));
-    setProducts(filter);
-  }
-  const filterJewelery = () =>{
-    const filter = products.filter(product => product.category.includes("jewelery"));
-    setProducts(filter);
-  }
-  const filterMensClothing = () =>{
-    const filter = products.filter(product => product.category.includes("men's clothing"));
-    setProducts(filter);
-  }
-  const filterWomensClothing = () =>{
-    const filter = products.filter(product => product.category.includes("women's clothing"));
-    setProducts(filter);
+      toast(t("homepage_product_added"));
   }
 
+  const sortAZ = () => {
+    setProducts(products.toSorted((a, b) => a.title.localeCompare(b.title)));
+  };
+  const sortZA = () => {
+    setProducts(products.toSorted((a, b) => b.title.localeCompare(a.title)));
+  };
+  const sortPriceHighToLow = () => {
+    setProducts(products.toSorted((a, b) => b.price - a.price));
+  };
+  const sortPriceLowToHigh = () => {
+    setProducts(products.toSorted((a, b) => a.price - b.price));
+  };
+  const sortRatingHTL = () => {
+    setProducts(products.toSorted((a, b) => b.rating.rate - a.rating.rate));
+  };
+  const sortRatingLTH = () => {
+    setProducts(products.toSorted((a, b) => a.rating.rate - b.rating.rate));
+  };
+
+  const filterElectronics = () => {
+    setProducts(products.filter(product => product.category.includes("electronics")));
+  };
+  const filterJewelery = () => {
+    setProducts(products.filter(product => product.category.includes("jewelery")));
+  };
+  const filterMensClothing = () => {
+    setProducts(products.filter(product => product.category.includes("men's clothing")));
+  };
+  const filterWomensClothing = () => {
+    setProducts(products.filter(product => product.category.includes("women's clothing")));
+  };
 
   return (
     <div>
       <CarouselGallery />
-      <button onClick={sortAZ}>Sort A - Z</button>
-      <button onClick={sortZA}>Sort Z - A</button>
-      <button onClick={sortPriceHighToLow}>Sort Price ⬇</button>
-      <button onClick={sortPriceLowToHigh}>Sort Prize ⬆</button>
-      <button onClick={sortRatingHTL}>Sort Rating ⬇</button>
-      <button onClick={sortRatingLTH}>Sort Rating ⬆</button>
+      <button onClick={sortAZ}>{t("homepage_sort_az")}</button> 
+      <button onClick={sortZA}>{t("homepage_sort_za")}</button>
+      <button onClick={sortPriceHighToLow}>{t("homepage_sort_price_desc")}</button>
+      <button onClick={sortPriceLowToHigh}>{t("homepage_sort_price_asc")}</button>
+      <button onClick={sortRatingHTL}>{t("homepage_sort_rating_desc")}</button>
+      <button onClick={sortRatingLTH}>{t("homepage_sort_rating_asc")}</button>
+      
       <br />
-      <div>Filter:</div>
-      <button onClick={filterElectronics}> Electronics </button>
-      <button onClick={filterWomensClothing}>womens clothing</button>
-      <button onClick={filterMensClothing}> mens clothing</button>
-      <button onClick={filterJewelery}>jewelery</button>
-
+      <div>{t("homepage_filter")}:</div>
+      <button onClick={filterElectronics}>{t("homepage_filter_electronics")}</button>
+      <button onClick={filterWomensClothing}>{t("homepage_filter_womens_clothing")}</button>
+      <button onClick={filterMensClothing}>{t("homepage_filter_mens_clothing")}</button>
+      <button onClick={filterJewelery}>{t("homepage_filter_jewelery")}</button>
 
       <br />
       {products.map((product) => 
@@ -80,8 +72,14 @@ function HomePage() {
           <img className={product.active ? styles.image : styles.inactive_image} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}</div>
-          <Link to={"/product/" + product.id} > <button>Vt lähemalt</button> </Link> 
-          <div><button disabled={!product.active} onClick={() => addToCart(product)}>Lisa ostukorvi</button></div>
+          <Link to={"/product/" + product.id} > 
+            <button>{t("homepage_view_details")}</button> 
+          </Link> 
+          <div>
+            <button disabled={!product.active} onClick={() => addToCart(product)}>
+              {t("homepage_add_to_cart")}
+            </button>
+          </div>
         </div>
       )}
 
@@ -95,10 +93,9 @@ function HomePage() {
         pauseOnFocusLoss
         draggable
         theme="light"
-        // transition={Bounce}
       />
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
