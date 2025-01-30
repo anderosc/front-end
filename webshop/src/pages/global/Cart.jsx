@@ -1,7 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Cart() {
-  const [products, setProduct] = useState(JSON.parse(localStorage.getItem("cart")));
+  const [products, setProduct] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const [parcelMachines, setParcelMachines] = useState([]);
+
+  useEffect(() => {
+    fetch("https://www.omniva.ee/locations.json")
+      .then(res => res.json())
+      .then(json => setParcelMachines(json));
+  }, []);
 
   const removeProduct = (product) => {
     products.splice(product, 1);
@@ -30,14 +37,20 @@ function Cart() {
         : undefined}
 
 
-      {products.map((cartProduct) => 
-        <div key={cartProduct.id}>
+      {products.map((cartProduct, index) => 
+        <div key={index}>
           <img style={{width: "100px"}} src={cartProduct.image} alt="" />
           <div>{cartProduct.title}</div>
           <div>{cartProduct.price}</div>
-          <div><button onClick={() => removeProduct(cartProduct)}>Remove</button></div>
+          <div><button onClick={() => removeProduct(index)}>Remove</button></div>
         </div>
       )}
+
+      <select > 
+        {parcelMachines
+        .filter(pm => pm.A0_NAME === "EE")
+        .map(pm => <option key={pm.NAME}> {pm.NAME} </option>)}
+      </select>
     </div>
   )
 }

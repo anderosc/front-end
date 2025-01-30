@@ -16,14 +16,16 @@ function NavigationBar() {
 
             <Nav.Link as={Link} to="/" >Home</Nav.Link>
             <Nav.Link as={Link} to="/shops">Shops</Nav.Link>
-            <Nav.Link as={Link} to="/products">Products</Nav.Link>
+            {/* <Nav.Link as={Link} to="/products">Products</Nav.Link> */}
             <Nav.Link as={Link} to="/cart"> Cart</Nav.Link>
+            <Nav.Link as={Link} to="/contact"> Contact</Nav.Link>
+
 
 
             <NavDropdown title="Admin" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin">Admin</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/add-product">Add Product</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/maintain-product/">Maintain products</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/admin/maintain-products">Maintain products</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-categories">Maintain categories</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-shops">Maintain shops</NavDropdown.Item>
 

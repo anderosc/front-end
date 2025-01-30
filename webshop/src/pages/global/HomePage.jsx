@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import productsFromFile from "../../data/products.json"
 import { ToastContainer, toast } from 'react-toastify';
+import CarouselGallery from "../../components/CarouselGallery";
+import styles from "../../css/Homepage.module.css"
 
 
 function HomePage() {
@@ -57,6 +59,7 @@ function HomePage() {
 
   return (
     <div>
+      <CarouselGallery />
       <button onClick={sortAZ}>Sort A - Z</button>
       <button onClick={sortZA}>Sort Z - A</button>
       <button onClick={sortPriceHighToLow}>Sort Price ⬇</button>
@@ -72,13 +75,13 @@ function HomePage() {
 
 
       <br />
-      {products.map((product, index) => 
+      {products.map((product) => 
         <div key={product.id}>
-          <img style={{width: "100px"}} src={product.image} alt="" />
+          <img className={product.active ? styles.image : styles.inactive_image} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}</div>
-          <Link to={"/product/" + index} > <button>Vt lähemalt</button> </Link> 
-          <div><button onClick={() => addToCart(product)}>Lisa ostukorvi</button></div>
+          <Link to={"/product/" + product.id} > <button>Vt lähemalt</button> </Link> 
+          <div><button disabled={!product.active} onClick={() => addToCart(product)}>Lisa ostukorvi</button></div>
         </div>
       )}
 
