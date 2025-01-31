@@ -43,13 +43,13 @@ function Products() {
         </tr>
         </thead>
         <tbody>
-        {/* TODO: Order the products by price */}
-        {products.map(product => 
+        {products
+        .toSorted((a, b) => a.price - b.price)
+        .map(product => 
             <tr key={product.name + product.price}>
               <td>{product.name}</td>
               <td>{product.price}</td>
-              {/*  TODO: Display the quantity in red if it is lower than 3 */}
-              <td>{product.quantity}</td> 
+              {product.quantity < 3 ? <td style={{color: " rgb(249, 7, 7)"}}> {product.quantity}</td> :<td> {product.quantity}</td> }
               <td>{product.store}</td>
             </tr>
           )}
