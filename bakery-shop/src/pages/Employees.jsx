@@ -3,12 +3,13 @@ import { Button, Table } from "react-bootstrap";
 
 function Employees() {
   const [employees, setEmployees] = useState([]);
+  const [newEmployees, setNewEmployees] = useState(employees);
+  const [message, setMessage] = useState("");
   const idRef = useRef();
   const nameRef = useRef();
   const emailRef = useRef();
   const avatarRef = useRef();
 
-  // TODO: Load data from backend service
   useEffect(() => {
     fetch("https://reqres.in/api/users")
     .then(res => res.json())
@@ -18,14 +19,43 @@ function Employees() {
 
   const addEmployee = () => {
     // TODO: Add validations
-    if(idRef.current.value = ""){
-      
+    if(idRef.current.value === ""){
+      setMessage("Missing ID")
+      return;
     }
+    if(nameRef.current.value === ""){
+      setMessage("Missing name")
+      return;
+    }
+    if(emailRef === ""){
+      setMessage("Missing Email");
+      return;
+    }
+    if(avatarRef === "")
+      setMessage("Missing Avatar")
     // TODO: Add an employee to the table
+
+    const newEmployee = {
+      id: idRef.current.value,
+      first_name: nameRef.current.value.split(" ")[0],
+      last_name: nameRef.current.value.split(" ")[1] || "",
+      email: emailRef.current.value,
+      avatar: avatarRef.current.value,
+    }
+
+    employees.push(newEmployee);
+    console.log(employees)
+    idRef.current.value = "";
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    avatarRef.current.value = "";
+    return;
+
   }
 
   const deleteEmployee = (index) => {
-    // TODO: Delete an employee from the table
+    employees.splice(index, 1);
+    setEmployees(employees.slice());  
   }
 
   return (<div>
@@ -44,9 +74,9 @@ function Employees() {
         </thead>
 
         <tbody>
-        {employees.map(employee =>
+        {employees.map((employee, index) =>
         <tr key={employee.id}>
-            <td> {employee.id} </td>
+            <td className="firsttd"> {employee.id} </td>
             <td> {employee.first_name + " " +  employee.last_name} </td>
             <td> {employee.email} </td>
             <td> <img src={employee.avatar} alt="" /> </td>
@@ -64,6 +94,7 @@ function Employees() {
         </tr>
         </tbody>
       </Table>
+      {message}
     </div>
 
   </div>)

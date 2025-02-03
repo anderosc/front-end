@@ -1,7 +1,7 @@
 /* TO-DO desing header so it does not get in conflict with other elements in page 
 .topbarmenu hght + border is for experiment to see where it is located*/
 
-.top{
+/* .top{
       
 
       
@@ -21,5 +21,11 @@
 }
 th, td{
     border: 1px, solid black;
-  }
+  } */
 
+  .navbar{
+    width: 100vw;
+    height: 15vw;
+    background-color: #ced8ff;
+
+  }

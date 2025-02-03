@@ -47,7 +47,7 @@ function Products() {
         .toSorted((a, b) => a.price - b.price)
         .map(product => 
             <tr key={product.name + product.price}>
-              <td>{product.name}</td>
+              <td className="firsttd" >{product.name}</td>
               <td>{product.price}</td>
               {product.quantity < 3 ? <td style={{color: " rgb(249, 7, 7)"}}> {product.quantity}</td> :<td> {product.quantity}</td> }
               <td>{product.store}</td>

@@ -12,11 +12,15 @@ import CompSubtraction from "./pages/train/competive/CompSubtraction"
 import CompMultiplication from "./pages/train/competive/CompMultiplication"
 import CompDivision from "./pages/train/competive/CompDivision"
 import Competitive from "./pages/train/competive/Competitive"
+import NavBar from "./components/NavBar"
 
 function App() {
 
   return (
     <>
+    <div className="navbar">
+    <NavBar />
+    </div>
       <div className="top">
 
         <div className="topbarmenu">
@@ -25,7 +29,7 @@ function App() {
           </Link>
 
           <Link to="/comp">
-          <div > <button className="button">Competitive</button> </div> 
+          <div > <button className="button">Games</button> </div> 
           </Link>
 
           <Link to="/train">
