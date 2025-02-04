@@ -3,10 +3,10 @@ import { Button, Table } from "react-bootstrap";
 
 function Employees() {
   const [employees, setEmployees] = useState([]);
-  const [newEmployees, setNewEmployees] = useState(employees);
   const [message, setMessage] = useState("");
   const idRef = useRef();
-  const nameRef = useRef();
+  const first_nameref = useRef();
+  const last_nameref = useRef();
   const emailRef = useRef();
   const avatarRef = useRef();
 
@@ -23,7 +23,7 @@ function Employees() {
       setMessage("Missing ID")
       return;
     }
-    if(nameRef.current.value === ""){
+    if(first_nameref.current.value === ""){
       setMessage("Missing name")
       return;
     }
@@ -37,20 +37,22 @@ function Employees() {
 
     const newEmployee = {
       id: idRef.current.value,
-      first_name: nameRef.current.value.split(" ")[0],
-      last_name: nameRef.current.value.split(" ")[1] || "",
+      first_name: first_nameref.current.value,
+      last_name: last_nameref.current.value,
       email: emailRef.current.value,
       avatar: avatarRef.current.value,
     }
 
     employees.push(newEmployee);
-    console.log(employees)
+    setEmployees(employees.slice());
+    // slice teeb array koopia
+
     idRef.current.value = "";
-    nameRef.current.value = "";
+    first_nameref.current.value = "";
+    last_nameref.current.value = "";
     emailRef.current.value = "";
     avatarRef.current.value = "";
     return;
-
   }
 
   const deleteEmployee = (index) => {
@@ -80,17 +82,17 @@ function Employees() {
             <td> {employee.first_name + " " +  employee.last_name} </td>
             <td> {employee.email} </td>
             <td> <img src={employee.avatar} alt="" /> </td>
-            <td> <button onClick={deleteEmployee}> DELETE</button></td>
+            <td> <button onClick={() => deleteEmployee(index)}> DELETE</button></td>
             </tr>
           )}
          
-
         <tr className="input-row">
-          <td><input ref={idRef} type="text" placeholder="ID" className="form-control"/></td>
-          <td><input ref={nameRef} type="text" placeholder="Name" className="form-control"/></td>
-          <td><input ref={emailRef} type="text" placeholder="Email" className="form-control"/></td>
-          <td><input ref={avatarRef} type="text" placeholder="Avatar" className="form-control"/></td>
-          <td><Button onClick={addEmployee} type="submit" variant="success">Add</Button></td>
+          <td><input  type="text" ref={idRef} placeholder="ID" className="form-control"/></td>
+          <td><input  type="text" ref={first_nameref} placeholder="First Name" className="form-control"/>
+          <input  type="text" ref={last_nameref} placeholder="Last Name" className="form-control"/></td>
+          <td><input  type="text" ref={emailRef} placeholder="Email" className="form-control"/></td>
+          <td><input  type="text" ref={avatarRef}  placeholder="Avatar" className="form-control"/></td>
+          <td><Button onClick={() => addEmployee()} type="submit" variant="success">Add</Button></td>
         </tr>
         </tbody>
       </Table>

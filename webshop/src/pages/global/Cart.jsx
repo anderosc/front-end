@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 function Cart() {
   const [products, setProduct] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [parcelMachines, setParcelMachines] = useState([]);
+  const [parcelMachineCountry, setParcleMachineCountry] = useState("EE")
 
   useEffect(() => {
     fetch("https://www.omniva.ee/locations.json")
@@ -46,11 +47,17 @@ function Cart() {
         </div>
       )}
 
+
+
       <select > 
         {parcelMachines
-        .filter(pm => pm.A0_NAME === "EE")
+        .filter(pm => pm.A0_NAME === parcelMachineCountry)
         .map(pm => <option key={pm.NAME}> {pm.NAME} </option>)}
       </select>
+
+      <button onClick={() => setParcleMachineCountry("EE")}>EE</button>
+      <button onClick={() => setParcleMachineCountry("LV")}>LV</button>
+      <button onClick={() => setParcleMachineCountry("LT")}>LT</button>
     </div>
   )
 }

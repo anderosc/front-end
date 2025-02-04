@@ -11,8 +11,12 @@ a {
   margin-top: 50px;
 }
 
-.firsttd{
+.td:first-child{
   font-weight: bold;
+}
+
+.low-quantity{
+  color: red !important
 }
 
 /*TODO: Set the font weight of the first table column to bold*/

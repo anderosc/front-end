@@ -1,7 +1,11 @@
 
-function MaintainShops() {
+function MaintainShops(
+  
+) {
   return (
-    <div>MaintainShops</div>
+    <div>
+      
+    </div>
   )
 }
 
